@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="parallel">
+    <test name="Device-1" >
+        <parameter name="url" value="https://www.crehana.com/" />
+        <classes>
+            <class name="testScript.LoginCrehanaTest"/>
+        </classes>
+    </test>
+</suite>
