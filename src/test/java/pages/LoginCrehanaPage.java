@@ -15,9 +15,9 @@ public class LoginCrehanaPage extends BasePage {
     private WebElement LoginFacebookButton;
     @FindBy(id = "customGoogleButton-1")
     private WebElement LoginGoogleButton;
-    @FindBy(id = "username")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/label[1]/div[1]/div[1]/input[1]")
     private WebElement LoginEmailTextInput;
-    @FindBy(id = "password")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/label[1]/div[1]/div[1]/input[1]")
     private WebElement LoginPasswordTextInput;
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/a[1]")
     private WebElement LoginForgotPasswordButton;

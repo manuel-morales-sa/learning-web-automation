@@ -7,6 +7,10 @@
     <groupId>org.crehana</groupId>
     <artifactId>learning-web-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>untitled</module>
+    </modules>
 
     <dependencies>
 
