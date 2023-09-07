@@ -41,6 +41,11 @@ public class EditTrackAddCoursesTest extends BaseClass {
         pp.ButtonDeleteCourse();
         Assert.assertEquals("¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?","¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?","¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?");
         pp.ButtonDeleteConfirm();
+        Thread.sleep(3000);
+        Assert.assertEquals("Curso de Seguridad de la Información borrado satisfactoriamente","Curso de Seguridad de la Información borrado satisfactoriamente","Curso de Seguridad de la Información borrado satisfactoriamente");
+        Thread.sleep(3000);
+
+
 
 
 
