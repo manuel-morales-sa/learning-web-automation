@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.LearningPathPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
 
@@ -12,6 +13,7 @@ public class EditTrackAddCoursesTest extends BaseClass {
     public void EditTrackAdmin() throws Exception  {
         LoginFunctions lf = new LoginFunctions(driver);
         PanelPage pp = new PanelPage(driver);
+        LearningPathPage lpp = new LearningPathPage(driver);
 
         driver.manage().window().maximize();
         lf.loginActions("automation.user@crehana.com", "1234567890");
@@ -22,11 +24,11 @@ public class EditTrackAddCoursesTest extends BaseClass {
         pp.ButtonContent();
         pp.ButtonLearningPaths();
         Thread.sleep(2000);
-        pp.InputLearningPathsC();
+        lpp.InputLearningPathsC();
         Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
-        pp.InputLearningPaths("Requisitos extremo");
+        lpp.InputLearningPaths("Requisitos extremo");
         Thread.sleep(2000);
-        pp.RequisitosExtremo();
+        lpp.RequisitosExtremo();
         Assert.assertEquals("Requisitos extremo","Requisitos extremo","Requisitos extremo");
         Thread.sleep(3000);
         pp.ButtonAddCourses();
