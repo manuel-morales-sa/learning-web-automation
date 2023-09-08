@@ -28,7 +28,7 @@ public class EditTrackAddCoursesTest extends BaseClass {
         Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
         lpp.InputLearningPaths("Requisitos extremo");
         Thread.sleep(2000);
-        lpp.RequisitosExtremo();
+        lpp.NameCourse();
         Assert.assertEquals("Requisitos extremo","Requisitos extremo","Requisitos extremo");
         Thread.sleep(3000);
         pp.ButtonAddCourses();
