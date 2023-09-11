@@ -12,6 +12,8 @@ public class HomePage extends BasePage {
     private WebElement orgLogo;
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/section/div[2]/h1/p")
     private WebElement welcomeAssert;
+    @FindBy(xpath = "//*[@id=\"main-footer\"]/div/div[1]/div[4]/div/a[1]")
+    private WebElement googlePlayButton;
 
     //-----------------------Constructor-----------------------//
     public HomePage(WebDriver driver) {
@@ -26,5 +28,9 @@ public class HomePage extends BasePage {
     public WebElement welcomeAssert() {
         welcomeAssert.getText();
         return welcomeAssert;
+    }
+    public WebElement googlePlayButton(){
+        googlePlayButton.click();
+        return null;
     }
 }
