@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class PanelPage extends BasePage{
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/button[3]/div[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/button[3]/div[1]/div[1]/p[1]")
     private WebElement ButtonContent;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[3]/div[3]/div[1]/ul[1]/li[2]/button[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/button[1]")
     private WebElement ButtonLearningPaths;
 
 

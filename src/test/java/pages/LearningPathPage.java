@@ -1,5 +1,5 @@
 package pages;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +29,17 @@ public class LearningPathPage {
     @FindBy(xpath = "/html[1]/body[1]/div[8]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     private WebElement ButtonOK;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[4]/div[3]/p[1]/button[1]")
+    private WebElement AddUser;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    private WebElement InputAddUserC;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    private WebElement InputAddUserText;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    private WebElement InputAddUserEnter;
+
     //-----------------------Constructor-----------------------//
     public LearningPathPage(WebDriver driver) {super();}
 
@@ -49,5 +60,9 @@ public class LearningPathPage {
     public void DeleteCourseInformatica () {DeleteCourseInformatica.click();}
     public void ButtonDeleteCourse() {ButtonDeleteCourse.click();}
     public void ButtonDeleteConfirm() {ButtonDeleteConfirm.click();}
+    public void AddUser() {AddUser.click();}
+    public void InputAddUserC() {InputAddUserC.click();}
+    public void InputAddUserText(String user) {InputAddUserC.sendKeys(user);}
+    public void InputAddUserEnter() {InputAddUserEnter.sendKeys(Keys.ENTER);}
 }
 

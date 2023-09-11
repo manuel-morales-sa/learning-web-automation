@@ -13,7 +13,7 @@ public class LoginCrehanaTest extends BaseClass {
         LoginFunctions lf = new LoginFunctions(driver);
         HomePage hp = new HomePage(driver);
 
-        lf.loginActions("automation.user@crehana.com", "1234567890");
+        lf.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
         WebElement element = hp.welcomeAssert();
