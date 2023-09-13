@@ -16,20 +16,20 @@ public class EditTrackAddCoursesTest extends BaseClass {
         LearningPathPage lpp = new LearningPathPage(driver);
 
         driver.manage().window().maximize();
-        lf.loginActions("automation.user@crehana.com", "1234567890");
+        lf.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana/panel/");
+        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
         Thread.sleep(3000);
         pp.ButtonContent();
         pp.ButtonLearningPaths();
-        Thread.sleep(2000);
+        Thread.sleep(6000);
         lpap.InputLearningPathsC();
         Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
-        lpap.InputLearningPaths("Requisitos extremo");
-        Thread.sleep(2000);
-        lpap.NameCourse();
-        Assert.assertEquals("Requisitos extremo","Requisitos extremo","Requisitos extremo");
+        lpap.InputLearningPaths("QA Track con cursos requeridos");
+        Thread.sleep(6000);
+        lpap.NameCourseQATrackConCursosRequeridos();
+        Assert.assertEquals("QA Track con cursos requeridos","QA Track con cursos requeridos","QA Track con cursos requeridos");
         Thread.sleep(3000);
         lpp.ButtonAddCourses();
         lpp.InputAddCoursesC();
