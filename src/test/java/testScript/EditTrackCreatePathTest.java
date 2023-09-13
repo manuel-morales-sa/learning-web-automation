@@ -6,6 +6,7 @@ import pages.CreateTrackPage;
 import pages.LearningPathABMPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
+import java.util.concurrent.TimeUnit;
 
 public class EditTrackCreatePathTest extends BaseClass {
     @Test
@@ -17,24 +18,24 @@ public class EditTrackCreatePathTest extends BaseClass {
 
     driver.manage().window().maximize();
     lf.loginActions("manuel.automation@mailinator.com", "1234567890");
-    Thread.sleep(4000);
-
-    driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
     Thread.sleep(6000);
+    driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+    Thread.sleep(8000);
     pp.ButtonContent();
     pp.ButtonLearningPaths();
+    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     lpap.ButtonCreatePath();
     lpap.ButtonCreateTrack();
-    Thread.sleep(3000);
+    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     //1° paso de creacion de Track
     ctp.NameNewTrack();
     ctp.InputNameNewTrackSet("QA Track Sin Cursos Requeridos");
     ctp.AddCoursesInTrack("ia");
-    Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     ctp.SelectFirtsCourseInTrack();
     ctp.ButtonNext();
     //2° paso de creacion de Track
-    Thread.sleep(3000);
+    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     ctp.ButtonSubstraccionCourse();
     ctp.DateStart();
     ctp.DateFinish();
@@ -42,7 +43,7 @@ public class EditTrackCreatePathTest extends BaseClass {
     //3° paso de creacion de Track
     ctp.SelectFirstUser();
     ctp.ButtonNext();
-    Thread.sleep(3000);
+    driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     //4° paso de creacion de Track
     Assert.assertEquals("0 cursos","0 cursos","0 cursos");
     Assert.assertEquals("1 usuarios","1 usuarios","1 usuarios");
@@ -61,7 +62,6 @@ public class EditTrackCreatePathTest extends BaseClass {
     driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
     Thread.sleep(6000);
     Assert.assertEquals("QA Track Sin Cursos Requeridos","QA Track Sin Cursos Requeridos","QA Track Sin Cursos Requeridos");
-
 
     }
 }

@@ -7,6 +7,8 @@ import pages.LearningPathPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
 
+import java.util.concurrent.TimeUnit;
+
 public class EditTrackAddCoursesTest extends BaseClass {
     @Test
     public void EditTrackAdmin() throws Exception  {
@@ -23,7 +25,7 @@ public class EditTrackAddCoursesTest extends BaseClass {
         Thread.sleep(3000);
         pp.ButtonContent();
         pp.ButtonLearningPaths();
-        Thread.sleep(6000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpap.InputLearningPathsC();
         Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
         lpap.InputLearningPaths("QA Track con cursos requeridos");
