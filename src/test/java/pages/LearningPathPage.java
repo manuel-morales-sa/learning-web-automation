@@ -33,9 +33,9 @@ public class LearningPathPage extends BasePage{
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte USUARIOS.
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[3]/p[1]")
     private WebElement AddUser;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[10]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
     private WebElement InputAddUserC;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[10]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
     private WebElement InputAddUserText;
     @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div[2]")
     private WebElement InputAddUserEnter;
@@ -55,7 +55,7 @@ public class LearningPathPage extends BasePage{
     private WebElement AddProjectRequiredPlus;
     @FindBy(xpath = "/html[1]/body[1]/div[23]/div[1]/div[1]/div[3]/button[2]")
     private WebElement SaveAddProjectRequiredPlus;
-    
+
     @FindBy(xpath = "//tbody/tr[1]/td[6]/div[1]/div[1]/button[1]/*[1]")
     private WebElement DeleteCourseCrehana;
 

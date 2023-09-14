@@ -54,10 +54,7 @@ public class EditTrackCreatePathTest extends BaseClass {
     Assert.assertEquals("Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
     ctp.ButtonConfirmTrackFinal();
     Thread.sleep(12000);
-    Assert.assertEquals("¡Felicitaciones!\n" +
-            "Creaste una nueva","¡Felicitaciones!\n" +
-            "Creaste una nueva","¡Felicitaciones!\n" +
-            "Creaste una nueva");
+    Assert.assertEquals("¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva");
     //Valido Curso en Rutas de Aprendizaje
     driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
     Thread.sleep(6000);

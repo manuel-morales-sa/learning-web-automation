@@ -24,14 +24,14 @@ public class AdminTrackAddAndDeleteMixCoursesTest extends BaseClass {
        Thread.sleep(2000);
 
        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
-       Thread.sleep(6000);
+       driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
        pp.ButtonContent();
        pp.ButtonLearningPaths();
        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
        lpap.InputLearningPathsC();
        Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
        lpap.InputLearningPaths("QA Track sin Cursos");
-       driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+       Thread.sleep(6000);
        lpap.NameCourseQATrackConCursosRequeridos();
        Thread.sleep(3000);
        lpp.AddCourseIfNotExists();
@@ -46,7 +46,7 @@ public class AdminTrackAddAndDeleteMixCoursesTest extends BaseClass {
        lpp.DeleteCourseCrehana();
        lpp.ButtonDeleteCourse();
        Assert.assertEquals("¿Estás seguro de que deseas eliminar","¿Estás seguro de que deseas eliminar","¿Estás seguro de que deseas eliminar");
-       Thread.sleep(12000);
+       driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
        lpp.ButtonDeleteConfirm();
        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
        Assert.assertEquals("borrado satisfactoriamente","borrado satisfactoriamente","borrado satisfactoriamente");

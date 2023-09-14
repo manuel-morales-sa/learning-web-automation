@@ -15,11 +15,16 @@ public class LearningPathABMPage extends BasePage{
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]/span[1]")
     private WebElement NameCourseQATrackConCursosRequeridos;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]/span[1]")
+    private WebElement NameCourseQATrackConCursosRequeridosGet;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]")
     private WebElement ButtonCreatePath;
     @FindBy(xpath = "/html[1]/body[1]/div[13]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]")
     private WebElement ButtonCreateTrack;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]")
+    private WebElement ContadorCoursesRequired;
 
     //-----------------------Constructor-----------------------//
     public LearningPathABMPage(WebDriver driver) {
@@ -40,6 +45,15 @@ public class LearningPathABMPage extends BasePage{
     }
     public void ButtonCreateTrack() {
         ButtonCreateTrack.click();
+    }
+
+    public WebElement NameCourseQATrackConCursosRequeridosGet() {
+        NameCourseQATrackConCursosRequeridosGet.getText();
+        return NameCourseQATrackConCursosRequeridosGet;
+    }
+    public WebElement ContadorCoursesRequired() {
+        ContadorCoursesRequired.getText();
+        return ContadorCoursesRequired;
     }
 
 
