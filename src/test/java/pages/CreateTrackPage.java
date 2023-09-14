@@ -50,9 +50,15 @@ public class CreateTrackPage extends BasePage{
 
     @FindBy(xpath = "/html/body/div[13]/div[4]/div/div/div/div/div/div/div/div/button[2]")
     private WebElement ButtonConfirmTrackFinal;
-
     @FindBy(xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     private WebElement ButtonClose;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/section[1]/section[1]/div[1]/button[1]")
+    private WebElement ButtonSavePreview;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/section[1]/button[1]")
+    private WebElement ButtonCancelPath;
+    @FindBy(xpath = "/html/body/div[10]/div[4]/div/div/div/div/div/div/div/div/button[2]")
+    private WebElement ButtonSaveAndExit;
+
 
     //-----------------------Constructor-----------------------//
     public CreateTrackPage(WebDriver driver) {
@@ -81,4 +87,8 @@ public class CreateTrackPage extends BasePage{
     public void ButtonConfirmTrack(){ButtonConfirmTrack.click();}
     public void ButtonConfirmTrackFinal(){ButtonConfirmTrackFinal.click();}
     public void ButtonClose(){ButtonClose.click();}
+    public void ButtonSavePreview() {ButtonSavePreview.click();}
+    public void ButtonCancelPath(){ButtonCancelPath.click();}
+    public void ButtonSaveAndExit(){ButtonSaveAndExit.click();}
+
 }

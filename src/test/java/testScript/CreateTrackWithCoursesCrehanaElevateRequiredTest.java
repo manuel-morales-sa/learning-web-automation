@@ -74,9 +74,10 @@ public class CreateTrackWithCoursesCrehanaElevateRequiredTest extends BaseClass 
         //Valido Curso en Rutas de Aprendizaje
         driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
         Thread.sleep(6000);
+        lpap.InputLearningPathsC();
+        lpap.InputLearningPaths("QA Track Con Cursos Crehana y Elevate");
         WebElement elemento = lpap.NameCourseQATrackConCursosRequeridosGet();
         Assert.assertEquals(elemento.getText(), "QA Track Con Cursos Crehana y Elevate");
-
         WebElement elemento1 = lpap.ContadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "4\n" +
                 "/5");

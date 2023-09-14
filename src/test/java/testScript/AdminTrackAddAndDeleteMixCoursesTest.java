@@ -59,15 +59,11 @@ public class AdminTrackAddAndDeleteMixCoursesTest extends BaseClass {
        lpp.AddCourseElevate();
        lpp.SaveChangesAddCourses();
        Assert.assertEquals("Curso(s) agregado(s) satisfactoriamente","Curso(s) agregado(s) satisfactoriamente","Curso(s) agregado(s) satisfactoriamente");
-       WebElement elemento = lpp.ValidoPosicionCursoQA();
+       WebElement elemento = lpap.ValidoPosicionCursoQA();
        Assert.assertEquals(elemento.getText(), "QA Curso Propio Automation");
        Thread.sleep(3000);
        lpp.DeleteCourseCrehana();
        lpp.ButtonDeleteCourse();
-
-
-
-
 
    }
 }
