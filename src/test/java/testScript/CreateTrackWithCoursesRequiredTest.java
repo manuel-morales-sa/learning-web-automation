@@ -1,5 +1,6 @@
 package testScript;
 import baseClass.BaseClass;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateTrackPage;
@@ -51,7 +52,6 @@ public class CreateTrackWithCoursesRequiredTest extends BaseClass {
         ctp.ButtonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //4° paso de creacion de Track
-        Assert.assertEquals("4 cursos","4 cursos","4 cursos");
         Assert.assertEquals("1 usuarios","1 usuarios","1 usuarios");
         ctp.ButtonConfirmTrack();
         Thread.sleep(10000);
@@ -60,13 +60,16 @@ public class CreateTrackWithCoursesRequiredTest extends BaseClass {
         Assert.assertEquals("Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
         ctp.ButtonConfirmTrackFinal();
         Thread.sleep(12000);
-        Assert.assertEquals("¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva");
         //Valido Curso en Rutas de Aprendizaje
         driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
         Thread.sleep(6000);
-        Assert.assertEquals("QA Track Con 4 Cursos Requeridos","QA Track Con 4 Cursos Requeridos","QA Track Con 4 Cursos Requeridos");
-
-
+        lpap.InputLearningPathsC();
+        lpap.InputLearningPaths("QA Track Con 4 Cursos Requeridos");
+        WebElement elemento = lpap.NameCourseQATrackConCursosRequeridosGet();
+        Assert.assertEquals(elemento.getText(), "QA Track Con 4 Cursos Requeridos");
+        WebElement elemento1 = lpap.ContadorCoursesRequired();
+        Assert.assertEquals(elemento1.getText(), "4\n" +
+                "/5");
 
     }
 }

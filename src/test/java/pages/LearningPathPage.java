@@ -24,17 +24,20 @@ public class LearningPathPage extends BasePage{
     private WebElement ButtonDeleteConfirm;
     @FindBy(xpath = "//tbody/tr[5]/td[6]/div[1]/div[1]/button[1]")
     private WebElement DeleteCourseRequired;
-    @FindBy(xpath = "/html[1]/body[1]/div[8]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[9]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     private WebElement ButtonOK;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[3]/p[1]/button[1]")
     private WebElement AddCourseIfNotExists;
 
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]")
+    private WebElement ValidationCoursesTotal;
+
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte USUARIOS.
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[4]/div[3]/p[1]")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[3]/p/button")
     private WebElement AddUser;
-    @FindBy(xpath = "/html[1]/body[1]/div[10]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
     private WebElement InputAddUserC;
-    @FindBy(xpath = "/html[1]/body[1]/div[10]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
     private WebElement InputAddUserText;
     @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div[2]")
     private WebElement InputAddUserEnter;
@@ -46,7 +49,7 @@ public class LearningPathPage extends BasePage{
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte REQUISITOS.
     @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/div[1]/div[3]/div[1]/div[5]/div")
     private WebElement EditRequired;
-    @FindBy(xpath = "/html[1]/body[1]/div[19]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[2]/button[1]")
+    @FindBy(xpath = "//button[contains(text(),'Si, continuar')]")
     private WebElement ConfirmRequired;
     @FindBy(xpath = "/html[1]/body[1]/div[23]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[2]")
     private WebElement AddCourseRequiredPlus;
@@ -99,5 +102,11 @@ public class LearningPathPage extends BasePage{
     public void DeleteCourseCrehana() {DeleteCourseCrehana.click();}
     public void AddCourseElevate() {AddCourseElevate.click();}
     public void AddCourseIfNotExists() {AddCourseIfNotExists.click();}
+
+    public WebElement ValidationCoursesTotal() {
+        ValidationCoursesTotal.getText();
+        return ValidationCoursesTotal;
+    }
+
 }
 

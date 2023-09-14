@@ -1,5 +1,6 @@
 package testScript;
 import baseClass.BaseClass;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateTrackPage;
@@ -8,7 +9,7 @@ import pages.PanelPage;
 import utilities.LoginFunctions;
 import java.util.concurrent.TimeUnit;
 
-public class EditTrackCreatePathTest extends BaseClass {
+public class CreateTrackPathTest extends BaseClass {
     @Test
     public void EditTrackCreatePath() throws Exception {
     LoginFunctions lf = new LoginFunctions(driver);
@@ -45,7 +46,6 @@ public class EditTrackCreatePathTest extends BaseClass {
     ctp.ButtonNext();
     driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     //4° paso de creacion de Track
-    Assert.assertEquals("0 cursos","0 cursos","0 cursos");
     Assert.assertEquals("1 usuarios","1 usuarios","1 usuarios");
     ctp.ButtonConfirmTrack();
     Thread.sleep(10000);
@@ -54,11 +54,15 @@ public class EditTrackCreatePathTest extends BaseClass {
     Assert.assertEquals("Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.","Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
     ctp.ButtonConfirmTrackFinal();
     Thread.sleep(12000);
-    Assert.assertEquals("¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva","¡Felicitaciones!\n" + "Creaste una nueva");
     //Valido Curso en Rutas de Aprendizaje
     driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
-    Thread.sleep(6000);
-    Assert.assertEquals("QA Track Sin Cursos Requeridos","QA Track Sin Cursos Requeridos","QA Track Sin Cursos Requeridos");
-
+    Thread.sleep(2000);
+    lpap.InputLearningPathsC();
+    lpap.InputLearningPaths("QA Track Sin Cursos Requeridos");
+    WebElement elemento = lpap.NameCourseQATrackConCursosRequeridosGet();
+    Assert.assertEquals(elemento.getText(), "QA Track Sin Cursos Requeridos");
+        WebElement elemento1 = lpap.ContadorCoursesRequired();
+        Assert.assertEquals(elemento1.getText(), "0\n" +
+                "/1");
     }
 }

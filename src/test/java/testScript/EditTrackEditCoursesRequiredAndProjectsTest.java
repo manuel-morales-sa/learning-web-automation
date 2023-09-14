@@ -8,6 +8,8 @@ import pages.LearningPathPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
 
+import java.util.concurrent.TimeUnit;
+
 public class EditTrackEditCoursesRequiredAndProjectsTest extends BaseClass {
 
     @Test
@@ -32,9 +34,9 @@ public class EditTrackEditCoursesRequiredAndProjectsTest extends BaseClass {
         Thread.sleep(6000);
         lpap.NameCourseQATrackConCursosRequeridos();
         Assert.assertEquals("QA Track con cursos requeridos","QA Track con cursos requeridos","QA Track con cursos requeridos");
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.ButtonAddCourses();
-        Thread.sleep(3000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.InputAddCoursesC();
         lpp.InputAddCourses("ia");
         Thread.sleep(4000);
@@ -42,13 +44,13 @@ public class EditTrackEditCoursesRequiredAndProjectsTest extends BaseClass {
         lpp.SaveChangesAddCourses();
         Thread.sleep(7000);
         lpp.EditRequired();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.ConfirmRequired();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.AddCourseRequiredPlus();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.AddProjectRequiredPlus();
-        Thread.sleep(4000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.SaveAddProjectRequiredPlus();
         Assert.assertEquals("¡Los requisitos de la ruta fueron actualizados!","¡Los requisitos de la ruta fueron actualizados!","¡Los requisitos de la ruta fueron actualizados!");
         Assert.assertEquals("Puedes ver el resumen de tus cambios enhistorial de cambios.","Puedes ver el resumen de tus cambios enhistorial de cambios.","Puedes ver el resumen de tus cambios enhistorial de cambios.");

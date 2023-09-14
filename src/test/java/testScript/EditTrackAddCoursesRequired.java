@@ -31,12 +31,11 @@ public class EditTrackAddCoursesRequired extends BaseClass {
         lpap.NameCourseQATrackConCursosRequeridos();
         Thread.sleep(6000);
         Assert.assertEquals("QA Track con cursos requeridos","QA Track con cursos requeridos","QA Track con cursos requeridos");
-        lpp.DeleteCourseRequired();
+        lpp.DeleteCourseCrehana();
         lpp.ButtonDeleteCourse();
         Thread.sleep(2000);
-        Assert.assertEquals("No es posible eliminar el cursoEscucha activa y empatíade la ruta QA Track con cursos requeridos","No es posible eliminar el cursoEscucha activa y empatíade la ruta QA Track con cursos requeridos","No es posible eliminar el cursoEscucha activa y empatíade la ruta QA Track con cursos requeridos");
+        Assert.assertEquals("No es posible eliminar el curso","No es posible eliminar el curso","No es posible eliminar el curso");
         Assert.assertEquals("La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.","La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.","La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.");
-        lpp.ButtonOK();
         Thread.sleep(2000);
     }
 

@@ -8,6 +8,8 @@ import pages.LearningPathPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
 
+import java.util.concurrent.TimeUnit;
+
 public class EditTrackAdminAddUsersTest extends BaseClass {
     @Test
     public void EditTrackAdminAddUsers() throws Exception {
@@ -32,14 +34,14 @@ public class EditTrackAdminAddUsersTest extends BaseClass {
         lpap.NameCourseQATrackConCursosRequeridos();
         Thread.sleep(3000);
         Assert.assertEquals("QA Track con cursos requeridos","QA Track con cursos requeridos","QA Track con cursos requeridos");
-        Thread.sleep(5000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/estadisticas/grupales/27624/subir-usuarios/");
-        //lpp.AddUser(); Lo comento hasta que tenga un ID o xpath que funcione
-        Thread.sleep(2000);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        lpp.AddUser();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.InputAddUserC();
-        Thread.sleep(2000);
-        lpp.InputAddUserText("robot.1@mailinator.com");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         Thread.sleep(3000);
+        lpp.InputAddUserText("robot.1@mailinator.com");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpp.InputAddUserEnter();
         lpp.ButtonConfirmAddUser();
         Assert.assertEquals("Usuario(s) agregado(s) satisfactoriamente","Usuario(s) agregado(s) satisfactoriamente","Usuario(s) agregado(s) satisfactoriamente");

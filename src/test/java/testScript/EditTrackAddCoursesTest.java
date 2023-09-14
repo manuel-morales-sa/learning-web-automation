@@ -1,5 +1,6 @@
 package testScript;
 import baseClass.BaseClass;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LearningPathABMPage;
@@ -28,12 +29,13 @@ public class EditTrackAddCoursesTest extends BaseClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         lpap.InputLearningPathsC();
         Assert.assertEquals("Rutas de aprendizajes","Rutas de aprendizajes","Rutas de aprendizajes");
-        lpap.InputLearningPaths("QA Track con cursos requeridos");
+        lpap.InputLearningPaths("QA Agrega y Quita Curso");
         Thread.sleep(6000);
         lpap.NameCourseQATrackConCursosRequeridos();
-        Assert.assertEquals("QA Track con cursos requeridos","QA Track con cursos requeridos","QA Track con cursos requeridos");
+        Assert.assertEquals("QA Agrega y Quita Curso","QA Agrega y Quita Curso","QA Agrega y Quita Curso");
         Thread.sleep(3000);
-        lpp.ButtonAddCourses();
+        lpp.AddCourseIfNotExists();
+        Thread.sleep(3000);
         lpp.InputAddCoursesC();
         lpp.InputAddCourses("ia");
         Thread.sleep(3000);
@@ -41,13 +43,15 @@ public class EditTrackAddCoursesTest extends BaseClass {
         lpp.SaveChangesAddCourses();
         Thread.sleep(3000);
         Assert.assertEquals("Curso(s) agregado(s) satisfactoriamente","Curso(s) agregado(s) satisfactoriamente","Curso(s) agregado(s) satisfactoriamente");
-        lpp.DeleteCourseInformatica();
+        lpp.DeleteCourseCrehana();
         lpp.ButtonDeleteCourse();
         Assert.assertEquals("¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?","¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?","¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?");
         lpp.ButtonDeleteConfirm();
         Thread.sleep(3000);
         Assert.assertEquals("Curso de Seguridad de la Información borrado satisfactoriamente","Curso de Seguridad de la Información borrado satisfactoriamente","Curso de Seguridad de la Información borrado satisfactoriamente");
         Thread.sleep(3000);
+        WebElement elemento1 = lpp.ValidationCoursesTotal();
+        Assert.assertEquals(elemento1.getText(), "0\n" + "Total de cursos");
 
 
 

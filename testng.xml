@@ -3,8 +3,7 @@
     <test name="Device-1" >
         <parameter name="url" value="https://qa.creha.co/org/crehana-automation/entrar/" />
         <classes>
-            <class name="testScript.AdminTrackAddAndSaveDraftCoursesTest"/>
-
+            <class name="testScript.CreateTrackPathTest"/>
         </classes>
     </test>
 </suite>

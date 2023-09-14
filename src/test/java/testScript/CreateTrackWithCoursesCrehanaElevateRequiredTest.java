@@ -60,7 +60,6 @@ public class CreateTrackWithCoursesCrehanaElevateRequiredTest extends BaseClass 
         ctp.ButtonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //4° paso de creacion de Track
-        Assert.assertEquals("4 cursos","4 cursos","4 cursos");
         Assert.assertEquals("1 usuarios","1 usuarios","1 usuarios");
         Thread.sleep(8000);
         ctp.ButtonConfirmTrack();

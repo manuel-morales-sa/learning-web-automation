@@ -11,7 +11,7 @@ import utilities.LoginFunctions;
 
 import java.util.concurrent.TimeUnit;
 
-public class AdminTrackAddAndSaveDraftCoursesTest extends BaseClass {
+public class CreateTrackAddAndSaveDraftCoursesTest extends BaseClass {
     @Test
     public void AdminTrackAddAndSaveDraftCourses() throws Exception{
         LoginFunctions lf = new LoginFunctions(driver);

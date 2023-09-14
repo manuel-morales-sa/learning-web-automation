@@ -64,6 +64,10 @@ public class AdminTrackAddAndDeleteMixCoursesTest extends BaseClass {
        Thread.sleep(3000);
        lpp.DeleteCourseCrehana();
        lpp.ButtonDeleteCourse();
+       lpp.ButtonDeleteConfirm();
+       Thread.sleep(3000);
+       WebElement elemento1 = lpp.ValidationCoursesTotal();
+       Assert.assertEquals(elemento1.getText(), "0\n" + "Total de cursos");
 
    }
 }
