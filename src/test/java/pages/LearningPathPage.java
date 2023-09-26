@@ -37,7 +37,7 @@ public class LearningPathPage extends BasePage{
     private WebElement AddUser;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
     private WebElement InputAddUserC;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div[2]")
     private WebElement InputAddUserText;
     @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div[2]")
     private WebElement InputAddUserEnter;
