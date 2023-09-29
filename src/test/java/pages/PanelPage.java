@@ -4,14 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PanelPage extends BasePage{
+public class PanelPage extends BasePage {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/button[3]/div[1]/div[1]/p[1]")
-    private WebElement ButtonContent;
+    private WebElement buttonContent;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/button[1]")
-    private WebElement ButtonLearningPaths;
-
-
+    private WebElement buttonLearningPaths;
 
     //-----------------------Constructor-----------------------//
     public PanelPage(WebDriver driver) {
@@ -20,14 +19,12 @@ public class PanelPage extends BasePage{
 
     //-----------------------Actions Methods-----------------------//
 
-    public void ButtonContent() {
-        ButtonContent.click();
-    }
-    public void ButtonLearningPaths() {
-        ButtonLearningPaths.click();
+    public void buttonContent() {
+        buttonContent.click();
     }
 
-
-
+    public void buttonLearningPaths() {
+        buttonLearningPaths.click();
+    }
 
 }

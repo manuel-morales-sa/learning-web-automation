@@ -4,60 +4,77 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class CreateTrackPage extends BasePage{
+public class CreateTrackPage extends BasePage {
 
     //1° paso de creacion de Track
     @FindBy(css = "#trackName")
-    private WebElement NameNewTrack;
+    private WebElement nameNewTrack;
+
     @FindBy(css = "#trackName")
-    private WebElement InputNameNewTrackSet;
+    private WebElement inputNameNewTrackSet;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]")
-    private WebElement AddRewards;
+    private WebElement addRewards;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/label[1]/div[1]/div[1]/input[1]")
-    private WebElement AddCoursesInTrack;
+    private WebElement addCoursesInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/label[1]/div[1]/div[1]/input[1]")
-    private WebElement AddCoursesInTrackClear;
+    private WebElement addCoursesInTrackClear;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[3]/div[3]/div[1]/div[2]/div[2]/div[2]/button[1]")
-    private WebElement SelectFirtsCourseInTrack;
+    private WebElement selectFirtsCourseInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[3]/div[3]/div[1]/div[1]/div[2]/div[2]/button[1]")
-    private WebElement Select2CourseInTrack;
+    private WebElement select2CourseInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[3]/div[3]/div[1]/div[3]/div[2]/div[2]/button[1]")
-    private WebElement Select3CourseInTrack;
+    private WebElement select3CourseInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[3]/div[3]/div[1]/div[4]/div[2]/div[2]/button[1]")
-    private WebElement Select4CourseInTrack;
+    private WebElement select4CourseInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[3]/div[3]/div[1]/div[5]/div[2]/div[2]/button[1]")
-    private WebElement Select5CourseInTrack;
+    private WebElement select5CourseInTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/button[1]")
-    private WebElement ButtonNext;
+    private WebElement buttonNext;
+
     //2° paso de creacion de Track
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/button[1]")
-    private WebElement ButtonSubstraccionCourse;
+    private WebElement buttonSubstraccionCourse;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/section[1]/section[1]/div[3]/div[2]/div[1]/button[2]")
-    private WebElement ButtonPlusRewards;
+    private WebElement buttonPlusRewards;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[25]")
-    private WebElement DateStart;
+    private WebElement dateStart;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[30]")
-    private WebElement DateFinish;
+    private WebElement dateFinish;
     //3° paso de creacion de Track
+
     @FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/label[1]/span[1]/*[1]")
-    private WebElement SelectFirstUser;
+    private WebElement selectFirstUser;
 
     //4° paso de creacion de Track
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/button[1]")
-    private WebElement ButtonConfirmTrack;
+    private WebElement buttonConfirmTrack;
 
     @FindBy(xpath = "/html/body/div[13]/div[4]/div/div/div/div/div/div/div/div/button[2]")
-    private WebElement ButtonConfirmTrackFinal;
+    private WebElement buttonConfirmTrackFinal;
+
     @FindBy(xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
-    private WebElement ButtonClose;
+    private WebElement buttonClose;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/section[1]/section[1]/div[1]/button[1]")
-    private WebElement ButtonSavePreview;
+    private WebElement buttonSavePreview;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/section[1]/button[1]")
-    private WebElement ButtonCancelPath;
+    private WebElement buttonCancelPath;
+
     @FindBy(xpath = "/html/body/div[10]/div[4]/div/div/div/div/div/div/div/div/button[2]")
-    private WebElement ButtonSaveAndExit;
+    private WebElement buttonSaveAndExit;
 
 
     //-----------------------Constructor-----------------------//
@@ -66,29 +83,92 @@ public class CreateTrackPage extends BasePage{
     }
 
     //-----------------------Actions Methods-----------------------//
-    public void NameNewTrack() {
-        NameNewTrack.click();
+    public void nameNewTrack() {
+        nameNewTrack.click();
     }
-    public void InputNameNewTrackSet(String Name) {InputNameNewTrackSet.sendKeys(Name);}
-    public void AddRewards(){AddRewards.click();}
-    public void AddCoursesInTrack(String ia) {AddCoursesInTrack.sendKeys(ia);}
-    public void AddCoursesInTrackClear() {AddCoursesInTrack.clear();}
-    public void SelectFirtsCourseInTrack(){SelectFirtsCourseInTrack.click();}
-    public void Select2CourseInTrack(){Select2CourseInTrack.click();}
-    public void Select3CourseInTrack(){Select3CourseInTrack.click();}
-    public void Select4CourseInTrack(){Select4CourseInTrack.click();}
-    public void Select5CourseInTrack(){Select5CourseInTrack.click();}
-    public void ButtonNext(){ButtonNext.click();}
-    public void ButtonSubstraccionCourse(){ButtonSubstraccionCourse.click();}
-    public void ButtonPlusRewards(){ButtonPlusRewards.click();}
-    public void DateStart(){DateStart.click();}
-    public void DateFinish(){DateFinish.click();}
-    public void SelectFirstUser(){SelectFirstUser.click();}
-    public void ButtonConfirmTrack(){ButtonConfirmTrack.click();}
-    public void ButtonConfirmTrackFinal(){ButtonConfirmTrackFinal.click();}
-    public void ButtonClose(){ButtonClose.click();}
-    public void ButtonSavePreview() {ButtonSavePreview.click();}
-    public void ButtonCancelPath(){ButtonCancelPath.click();}
-    public void ButtonSaveAndExit(){ButtonSaveAndExit.click();}
+
+    public void inputNameNewTrackSet(String Name) {
+        inputNameNewTrackSet.sendKeys(Name);
+    }
+
+    public void addRewards() {
+        addRewards.click();
+    }
+
+    public void addCoursesInTrack(String ia) {
+        addCoursesInTrack.sendKeys(ia);
+    }
+
+    public void addCoursesInTrackClear() {
+        addCoursesInTrack.clear();
+    }
+
+    public void selectFirtsCourseInTrack() {
+        selectFirtsCourseInTrack.click();
+    }
+
+    public void select2CourseInTrack() {
+        select2CourseInTrack.click();
+    }
+
+    public void select3CourseInTrack() {
+        select3CourseInTrack.click();
+    }
+
+    public void select4CourseInTrack() {
+        select4CourseInTrack.click();
+    }
+
+    public void select5CourseInTrack() {
+        select5CourseInTrack.click();
+    }
+
+    public void buttonNext() {
+        buttonNext.click();
+    }
+
+    public void buttonSubstraccionCourse() {
+        buttonSubstraccionCourse.click();
+    }
+
+    public void buttonPlusRewards() {
+        buttonPlusRewards.click();
+    }
+
+    public void dateStart() {
+        dateStart.click();
+    }
+
+    public void dateFinish() {
+        dateFinish.click();
+    }
+
+    public void selectFirstUser() {
+        selectFirstUser.click();
+    }
+
+    public void buttonConfirmTrack() {
+        buttonConfirmTrack.click();
+    }
+
+    public void buttonConfirmTrackFinal() {
+        buttonConfirmTrackFinal.click();
+    }
+
+    public void buttonClose() {
+        buttonClose.click();
+    }
+
+    public void buttonSavePreview() {
+        buttonSavePreview.click();
+    }
+
+    public void buttonCancelPath() {
+        buttonCancelPath.click();
+    }
+
+    public void buttonSaveAndExit() {
+        buttonSaveAndExit.click();
+    }
 
 }
