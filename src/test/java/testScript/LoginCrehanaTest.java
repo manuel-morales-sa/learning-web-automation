@@ -3,12 +3,8 @@ package testScript;
 import baseClass.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import pages.HomePage;
-import pages.LandingPage;
 import utilities.LoginFunctions;
 
 public class LoginCrehanaTest extends BaseClass {
