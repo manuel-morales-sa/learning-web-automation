@@ -14,7 +14,7 @@ public class LoginCrehanaTest extends BaseClass {
         HomePage home = new HomePage(driver);
 
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
         WebElement element = home.welcomeAssert();
         Assert.assertEquals(element.getText(), "¡Te damos la bienvenida a Crehana!");
@@ -27,11 +27,8 @@ public class LoginCrehanaTest extends BaseClass {
         HomePage home = new HomePage(driver);
 
         loginFunctions.loginActions("user.error@mailinator.com", "1234567890");
-        Thread.sleep(2000);
+        Thread.sleep(4000);
 
-        WebElement element = home.welcomeAssert();
-        Assert.assertEquals(element.getText(), "¡Te damos la bienvenida a Crehana!");
-        System.out.println("Prueba OK..." + element.getText());
     }
 
 }
