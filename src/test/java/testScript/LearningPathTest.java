@@ -54,6 +54,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(3000);
         WebElement elemento1 = LearningPathPage.ValidationCoursesTotal();
         Assert.assertEquals(elemento1.getText(), "0\n" + "Total de cursos");
+        driver.close();
     }
 
     @Test
@@ -85,6 +86,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals("No es posible eliminar el curso", "No es posible eliminar el curso", "No es posible eliminar el curso");
         Assert.assertEquals("La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.", "La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.", "La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.");
         Thread.sleep(2000);
+        driver.close();
     }
 
     @Test
@@ -125,6 +127,7 @@ public class LearningPathTest extends BaseClass {
         WebElement element = LearningPathPage.NameFirstUser();
         Assert.assertEquals(element.getText(), "Robot 1");
         Thread.sleep(3000);
+        driver.close();
     }
 
     @Test
@@ -170,6 +173,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals("¡Los requisitos de la ruta fueron actualizados!", "¡Los requisitos de la ruta fueron actualizados!", "¡Los requisitos de la ruta fueron actualizados!");
         Assert.assertEquals("Puedes ver el resumen de tus cambios enhistorial de cambios.", "Puedes ver el resumen de tus cambios enhistorial de cambios.", "Puedes ver el resumen de tus cambios enhistorial de cambios.");
         Thread.sleep(3000);
+        driver.close();
     }
 
     @Test
@@ -219,6 +223,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento.getText(), "QA Track Sin Cursos Requeridos");
         WebElement elemento1 = LearningPathABMPage.ContadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "0\n" + "/1");
+        driver.close();
     }
 
     @Test
@@ -276,6 +281,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(3000);
         WebElement elemento1 = LearningPathPage.ValidationCoursesTotal();
         Assert.assertEquals(elemento1.getText(), "0\n" + "Total de cursos");
+        driver.close();
     }
 
     @Test
@@ -331,6 +337,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento.getText(), "QA Track Con 4 Cursos Requeridos");
         WebElement elemento1 = LearningPathABMPage.ContadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "4\n" + "/5");
+        driver.close();
     }
 
     @Test
@@ -388,6 +395,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento.getText(), "QA Track Con Rewards");
         WebElement elemento1 = LearningPathABMPage.ContadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "4\n" + "/5");
+        driver.close();
     }
 
     @Test
@@ -450,6 +458,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento.getText(), "QA Track Con Cursos Crehana y Elevate");
         WebElement elemento1 = LearningPathABMPage.ContadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "4\n" + "/5");
+        driver.close();
     }
 
     @Test
@@ -492,5 +501,6 @@ public class LearningPathTest extends BaseClass {
         LearningPathABMPage.InputLearningPaths("QA Track Borrador");
         WebElement elemento = LearningPathABMPage.NameCourseQATrackConCursosRequeridosGet();
         Assert.assertEquals(elemento.getText(), "QA Track Borrador");
+        driver.close();
     }
 }

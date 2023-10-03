@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import javax.xml.xpath.XPath;
+
 public class LearningPathABMPage extends BasePage{
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1]")
@@ -28,6 +30,20 @@ public class LearningPathABMPage extends BasePage{
     private WebElement ContadorCoursesRequired;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[2]/div[1]/span[1]")
     private WebElement SectionPreview;
+    @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/button[1]/*[1]")
+    private WebElement MenuWithOptions;
+    @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/div[1]/div[4]/button[1]")
+    private WebElement OptionDeletePath;
+    @FindBy(xpath = "//p[contains(text(),'¿Deseas eliminar la ruta')]")
+    private WebElement MessageDeletePath;
+    @FindBy(xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[2]/span[1]")
+    private WebElement NameCoursePopupConfirm;
+    @FindBy (xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[1]")
+    private WebElement TextPopUpAlert;
+    @FindBy (xpath = "//button[contains(text(),'Sí, eliminar')]")
+    private WebElement ButtonConfirmDeletePath;
+    @FindBy(xpath = "/html[1]/body[1]/div[6]/p[1]")
+    private  WebElement ToastConfirmDeletePath;
     //-----------------------Constructor-----------------------//
     public LearningPathABMPage(WebDriver driver) {
         super(driver);
@@ -35,9 +51,7 @@ public class LearningPathABMPage extends BasePage{
 
     //-----------------------Actions Methods-----------------------//
 
-    public void InputLearningPathsC() {
-        InputLearningPathsC.click();
-    }
+    public void InputLearningPathsC() {InputLearningPathsC.click();}
     public void InputLearningPaths(String Curso) {InputLearningPaths.sendKeys(Curso);}
     public void NameCourseQATrackConCursosRequeridos() {
         NameCourseQATrackConCursosRequeridos.click();
@@ -57,11 +71,29 @@ public class LearningPathABMPage extends BasePage{
         ValidoPosicionCursoQA.getText();
         return ValidoPosicionCursoQA;
     }
-    public void SectionPreview() {
-        SectionPreview.click();
+    public void SectionPreview() {SectionPreview.click();
     }
     public WebElement ContadorCoursesRequired() {
         ContadorCoursesRequired.getText();
         return ContadorCoursesRequired;
+    }
+    public void MenuWithOptions() {MenuWithOptions.click();}
+    public void OptionDeletePath() {OptionDeletePath.click();}
+    public WebElement MessageDeletePath() {
+        MessageDeletePath.getText();
+        return MessageDeletePath;
+    }
+    public WebElement NameCoursePopupConfirm() {
+        NameCoursePopupConfirm.getText();
+        return NameCoursePopupConfirm;
+    }
+    public WebElement TextPopUpAlert() {
+        TextPopUpAlert.getText();
+        return TextPopUpAlert;
+    }
+    public void ButtonConfirmDeletePath() {ButtonConfirmDeletePath.click();}
+    public WebElement ToastConfirmDeletePath() {
+        ToastConfirmDeletePath.getText();
+        return ToastConfirmDeletePath;
     }
 }
