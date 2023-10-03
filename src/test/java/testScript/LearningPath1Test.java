@@ -6,90 +6,70 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.CreateTrackPage;
 import pages.LearningPathABMPage;
+import pages.LearningPathPage;
 import pages.PanelPage;
 import utilities.LoginFunctions;
-
 import java.util.concurrent.TimeUnit;
 
 public class LearningPath1Test extends BaseClass {
-   @Test
-    public void CreatePathWithCoursesElevate() throws Exception{
-        LoginFunctions LoginFunctions = new LoginFunctions(driver);
-        PanelPage PanelPage = new PanelPage(driver);
-        LearningPathABMPage LearningPathABMPage = new LearningPathABMPage(driver);
-        CreateTrackPage CreateTrackPage = new CreateTrackPage(driver);
+    @Test
+    public void CreateTrackWithCoursesRequiredAndRewards() throws Exception {
+        LoginFunctions loginFunctions = new LoginFunctions(driver);
+        PanelPage panelPage = new PanelPage(driver);
+        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
+        CreateTrackPage createTrackPage = new CreateTrackPage(driver);
 
         driver.manage().window().maximize();
-        LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
+        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
         driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
         Thread.sleep(8000);
-        PanelPage.buttonContent();
-        PanelPage.buttonLearningPaths();
+        panelPage.buttonContent();
+        panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        LearningPathABMPage.ButtonCreatePath();
-        LearningPathABMPage.ButtonCreateTrack();
+        learningPathABMPage.buttonCreatePath();
+        learningPathABMPage.buttonCreateTrack();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        CreateTrackPage.nameNewTrack();
-        CreateTrackPage.inputNameNewTrackSet("QA Track Con Curso Elevate");
-        CreateTrackPage.addCoursesInTrack("QA curso propio");
-        Thread.sleep(8000);
-        CreateTrackPage.select2CourseInTrack();
-        Thread.sleep(8000);
-        CreateTrackPage.buttonNext();
+        createTrackPage.nameNewTrack();
+        createTrackPage.inputNameNewTrackSet("QA Track Con Rewards");
+        createTrackPage.addRewards();
+        createTrackPage.addCoursesInTrack("ia");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        CreateTrackPage.buttonSubstraccionCourse();
-        CreateTrackPage.dateStart();
-        CreateTrackPage.dateFinish();
+        createTrackPage.selectFirtsCourseInTrack();
+        createTrackPage.select2CourseInTrack();
+        createTrackPage.select3CourseInTrack();
+        createTrackPage.select4CourseInTrack();
+        Thread.sleep(8000);// Dejo un tiempo hasta validar como eliminar el popup que aparece
+        createTrackPage.select5CourseInTrack();
         Thread.sleep(8000);
-        CreateTrackPage.buttonNext();
-        CreateTrackPage.selectFirstUser();
+        createTrackPage.buttonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        CreateTrackPage.buttonNext();
+        createTrackPage.buttonSubstraccionCourse();
+        createTrackPage.buttonPlusRewards();
+        createTrackPage.dateStart();
+        createTrackPage.dateFinish();
+        createTrackPage.buttonNext();
+        createTrackPage.selectFirstUser();
+        createTrackPage.buttonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        Assert.assertEquals("1 usuarios", "1 usuarios", "1 usuarios");
-        Thread.sleep(8000);
-        CreateTrackPage.buttonConfirmTrack();
-        Thread.sleep(8000);
-        Assert.assertEquals("¡Genial! Estás a punto de dar un gran paso", "¡Genial! Estás a punto de dar un gran paso", "¡Genial! Estás a punto de dar un gran paso");
-        Assert.assertEquals("Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.", "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.", "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
-        CreateTrackPage.buttonConfirmTrackFinal();
-        Thread.sleep(8000);
-        Assert.assertEquals("¡Felicitaciones!\n" + "Creaste una nueva", "¡Felicitaciones!\n" + "Creaste una nueva", "¡Felicitaciones!\n" + "Creaste una nueva");
+        WebElement elemento = learningPathABMPage.resumeListUsers();
+        Assert.assertEquals(elemento.getText(), "1 usuarios");
+        createTrackPage.buttonConfirmTrack();
+        Thread.sleep(10000);
+        WebElement elemento0 = learningPathABMPage.messageGenial();
+        Assert.assertEquals(elemento0.getText(), "¡Genial! Estás a punto de dar un gran paso");
+        WebElement elemento1 = learningPathABMPage.messageGenialConfirmar();
+        Assert.assertEquals(elemento1.getText(), "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
+        createTrackPage.buttonConfirmTrackFinal();
+        Thread.sleep(12000);
         driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
         Thread.sleep(6000);
-        LearningPathABMPage.InputLearningPathsC();
-        LearningPathABMPage.InputLearningPaths("QA Track Con Curso Elevate");
-        WebElement elemento = LearningPathABMPage.nameCourseQATrackConCursosRequeridosGet();
-        Assert.assertEquals(elemento.getText(), "QA Track Con Curso Elevate");
-       driver.navigate().refresh();
-    }
-    @Test
-    public void DeletePathWithCoursesElevate() throws Exception{
-        LoginFunctions LoginFunctions = new LoginFunctions(driver);
-        PanelPage PanelPage = new PanelPage(driver);
-        LearningPathABMPage LearningPathABMPage = new LearningPathABMPage(driver);
-        CreateTrackPage CreateTrackPage = new CreateTrackPage(driver);
-
-        driver.manage().window().maximize();
-        LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
-        Thread.sleep(8000);
-        PanelPage.buttonContent();
-        PanelPage.buttonLearningPaths();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        LearningPathABMPage.InputLearningPathsC();
-        LearningPathABMPage.InputLearningPaths("QA Track Con Curso Elevate");
-        LearningPathABMPage.MenuWithOptions();
-        LearningPathABMPage.OptionDeletePath();
-        Thread.sleep(8000);
-        WebElement elemento = LearningPathABMPage.MessageDeletePath();
-        Assert.assertEquals(elemento.getText(), "¿Deseas eliminar la ruta");
-        LearningPathABMPage.ButtonConfirmDeletePath();
-        Thread.sleep(3000);
-        WebElement elemento3 = LearningPathABMPage.TextPopUpAlert();
-        Assert.assertEquals(elemento3.getText(), "Se ha eliminado el borrador QA Track Con Curso Elevate éxitosamente");
-
+        learningPathABMPage.inputLearningPathsC();
+        learningPathABMPage.inputLearningPaths("QA Track Con Rewards");
+        WebElement elemento2 = learningPathABMPage.nameCourseQATrackConCursosRequeridosGet();
+        Assert.assertEquals(elemento2.getText(), "QA Track Con Rewards");
+        WebElement elemento3 = learningPathABMPage.contadorCoursesRequired();
+        Assert.assertEquals(elemento3.getText(), "4\n" + "/5");
+        driver.navigate().refresh();
     }
 }

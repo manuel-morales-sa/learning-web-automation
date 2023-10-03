@@ -28,7 +28,7 @@ public class LearningPathABMPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[13]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]")
     private WebElement buttonCreateTrack;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[3]/p[1]")
     private WebElement validoPosicionCursoQA;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]")
@@ -50,7 +50,16 @@ public class LearningPathABMPage extends BasePage {
     private WebElement buttonConfirmDeletePath;
     @FindBy(xpath = "/html[1]/body[1]/div[6]/p[1]")
     private  WebElement toastConfirmDeletePath;
-
+    @FindBy(xpath = "/html/body/div[4]/p")
+    private WebElement messageSavePreview;
+    @FindBy(xpath = "//p[contains(text(),'¡Genial! Estás a punto de dar un gran paso')]")
+    private WebElement messageGenial;
+    @FindBy(xpath = "//p[contains(text(),'Si estás seguro de los datos ingresados y los curs')]")
+    private WebElement messageGenialConfirmar;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/section[1]/div[1]/div[2]/div[2]/div[1]/div[6]/section[1]/p[1]")
+    private WebElement resumeListUsers;
+    @FindBy(xpath = "//p[contains(text(),'¡Tu track ha sido creado!')]")
+    private WebElement messageTrackCreado;
 
     //-----------------------Constructor-----------------------//
     public LearningPathABMPage(WebDriver driver) {
@@ -61,6 +70,26 @@ public class LearningPathABMPage extends BasePage {
     public WebElement tittleLearningPaths() {
         tittleLearningPaths.getText();
         return tittleLearningPaths;
+    }
+    public WebElement messageTrackCreado() {
+        messageTrackCreado.getText();
+        return messageTrackCreado;
+    }
+    public WebElement messageGenial() {
+        messageGenial.getText();
+        return messageGenial;
+    }
+    public WebElement messageGenialConfirmar() {
+        messageGenialConfirmar.getText();
+        return messageGenialConfirmar;
+    }
+    public WebElement messageSavePreview() {
+        messageSavePreview.getText();
+        return messageSavePreview;
+    }
+    public WebElement resumeListUsers() {
+        resumeListUsers.getText();
+        return resumeListUsers;
     }
 
     public void InputLearningPathsC() {
