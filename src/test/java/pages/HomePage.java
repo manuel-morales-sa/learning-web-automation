@@ -10,6 +10,7 @@ public class HomePage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/a[1]/div/picture/img")
     private WebElement orgLogo;
+
     @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/section/div[2]/h1/p")
     private WebElement welcomeAssert;
 
@@ -27,4 +28,5 @@ public class HomePage extends BasePage {
         welcomeAssert.getText();
         return welcomeAssert;
     }
+
 }

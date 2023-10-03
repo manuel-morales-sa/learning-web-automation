@@ -3,47 +3,55 @@ package pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
 import javax.xml.xpath.XPath;
 
-public class LearningPathABMPage extends BasePage{
+public class LearningPathABMPage extends BasePage {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1]")
-    private WebElement TittleLearningPaths;
+    private WebElement tittleLearningPaths;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
-    private WebElement InputLearningPathsC;
+    private WebElement inputLearningPathsC;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
-    private WebElement InputLearningPaths;
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]/span[1]")
-    private WebElement NameCourseQATrackConCursosRequeridos;
+    private WebElement inputLearningPaths;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]/span[1]")
-    private WebElement NameCourseQATrackConCursosRequeridosGet;
+    private WebElement nameCourseQATrackConCursosRequeridos;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]/span[1]")
+    private WebElement nameCourseQATrackConCursosRequeridosGet;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/div[2]/button[2]")
-    private WebElement ButtonCreatePath;
+    private WebElement buttonCreatePath;
+
     @FindBy(xpath = "/html[1]/body[1]/div[13]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]")
-    private WebElement ButtonCreateTrack;
+    private WebElement buttonCreateTrack;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/p[1]")
-    private WebElement ValidoPosicionCursoQA;
+    private WebElement validoPosicionCursoQA;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]")
-    private WebElement ContadorCoursesRequired;
+    private WebElement contadorCoursesRequired;
+
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[2]/div[1]/span[1]")
-    private WebElement SectionPreview;
+    private WebElement sectionPreview;
     @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/button[1]/*[1]")
-    private WebElement MenuWithOptions;
+    private WebElement menuWithOptions;
     @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/div[1]/div[4]/button[1]")
-    private WebElement OptionDeletePath;
+    private WebElement optionDeletePath;
     @FindBy(xpath = "//p[contains(text(),'¿Deseas eliminar la ruta')]")
-    private WebElement MessageDeletePath;
+    private WebElement messageDeletePath;
     @FindBy(xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[2]/span[1]")
-    private WebElement NameCoursePopupConfirm;
-    @FindBy (xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/p[1]")
-    private WebElement TextPopUpAlert;
+    private WebElement nameCoursePopupConfirm;
+    @FindBy (xpath = "/html/body/div[6]/p")
+    private WebElement textPopUpAlert;
     @FindBy (xpath = "//button[contains(text(),'Sí, eliminar')]")
-    private WebElement ButtonConfirmDeletePath;
+    private WebElement buttonConfirmDeletePath;
     @FindBy(xpath = "/html[1]/body[1]/div[6]/p[1]")
-    private  WebElement ToastConfirmDeletePath;
+    private  WebElement toastConfirmDeletePath;
+
+
     //-----------------------Constructor-----------------------//
     public LearningPathABMPage(WebDriver driver) {
         super(driver);
@@ -51,49 +59,86 @@ public class LearningPathABMPage extends BasePage{
 
     //-----------------------Actions Methods-----------------------//
 
-    public void InputLearningPathsC() {InputLearningPathsC.click();}
-    public void InputLearningPaths(String Curso) {InputLearningPaths.sendKeys(Curso);}
+    public void InputLearningPathsC() {
+        inputLearningPathsC.click();
+    }
+    public void InputLearningPaths(String Curso) {
+        inputLearningPaths.sendKeys(Curso);
+    }
     public void NameCourseQATrackConCursosRequeridos() {
-        NameCourseQATrackConCursosRequeridos.click();
+        nameCourseQATrackConCursosRequeridos.click();
     }
     public void ButtonCreatePath() {
-        ButtonCreatePath.click();
+        buttonCreatePath.click();
     }
     public void ButtonCreateTrack() {
-        ButtonCreateTrack.click();
+        buttonCreateTrack.click();
+    }
+    public void inputLearningPathsC() {
+        inputLearningPathsC.click();
     }
 
-    public WebElement NameCourseQATrackConCursosRequeridosGet() {
-        NameCourseQATrackConCursosRequeridosGet.getText();
-        return NameCourseQATrackConCursosRequeridosGet;
+    public void inputLearningPaths(String Curso) {
+        inputLearningPaths.sendKeys(Curso);
     }
-    public WebElement ValidoPosicionCursoQA() {
-        ValidoPosicionCursoQA.getText();
-        return ValidoPosicionCursoQA;
+
+    public void nameCourseQATrackConCursosRequeridos() {
+        nameCourseQATrackConCursosRequeridos.click();
     }
-    public void SectionPreview() {SectionPreview.click();
+
+    public void SectionPreview() {
+        sectionPreview.click();
     }
-    public WebElement ContadorCoursesRequired() {
-        ContadorCoursesRequired.getText();
-        return ContadorCoursesRequired;
+
+    public void buttonCreatePath() {
+        buttonCreatePath.click();
     }
-    public void MenuWithOptions() {MenuWithOptions.click();}
-    public void OptionDeletePath() {OptionDeletePath.click();}
+
+    public void buttonCreateTrack() {
+        buttonCreateTrack.click();
+    }
+    public void MenuWithOptions() {
+        menuWithOptions.click();
+    }
+    public void OptionDeletePath() {
+        optionDeletePath.click();
+    }
     public WebElement MessageDeletePath() {
-        MessageDeletePath.getText();
-        return MessageDeletePath;
+        messageDeletePath.getText();
+        return messageDeletePath;
     }
     public WebElement NameCoursePopupConfirm() {
-        NameCoursePopupConfirm.getText();
-        return NameCoursePopupConfirm;
+        nameCoursePopupConfirm.getText();
+        return nameCoursePopupConfirm;
     }
     public WebElement TextPopUpAlert() {
-        TextPopUpAlert.getText();
-        return TextPopUpAlert;
+        textPopUpAlert.getText();
+        return textPopUpAlert;
     }
-    public void ButtonConfirmDeletePath() {ButtonConfirmDeletePath.click();}
+    public void ButtonConfirmDeletePath() {
+        buttonConfirmDeletePath.click();
+    }
     public WebElement ToastConfirmDeletePath() {
-        ToastConfirmDeletePath.getText();
-        return ToastConfirmDeletePath;
+        toastConfirmDeletePath.getText();
+        return toastConfirmDeletePath;
     }
+
+    public WebElement nameCourseQATrackConCursosRequeridosGet() {
+        nameCourseQATrackConCursosRequeridosGet.getText();
+        return nameCourseQATrackConCursosRequeridosGet;
+    }
+    public WebElement validoPosicionCursoQA() {
+        validoPosicionCursoQA.getText();
+        return validoPosicionCursoQA;
+    }
+
+    public void sectionPreview() {
+        sectionPreview.click();
+    }
+
+    public WebElement contadorCoursesRequired() {
+        contadorCoursesRequired.getText();
+        return contadorCoursesRequired;
+    }
+
 }
