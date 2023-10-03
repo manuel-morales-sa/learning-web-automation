@@ -30,12 +30,13 @@ public class LearningPathTest extends BaseClass {
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         learningPathABMPage.inputLearningPathsC();
-        Assert.assertEquals("Rutas de aprendizajes", "Rutas de aprendizajes", "Rutas de aprendizajes");
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
         learningPathABMPage.inputLearningPaths("QA Agrega y Quita Curso");
         Thread.sleep(6000);
         learningPathABMPage.nameCourseQATrackConCursosRequeridos();
-        Assert.assertEquals("QA Agrega y Quita Curso", "QA Agrega y Quita Curso", "QA Agrega y Quita Curso");
-        Thread.sleep(3000);
+        WebElement elemento1 = learningPathPage.titleCourseInCOurse();
+        Assert.assertEquals(elemento1.getText(), "QA Agrega y Quita Curso");Thread.sleep(3000);
         learningPathPage.addCourseIfNotExists();
         Thread.sleep(3000);
         learningPathPage.inputAddCoursesC();
@@ -44,16 +45,20 @@ public class LearningPathTest extends BaseClass {
         learningPathPage.addCourseButton();
         learningPathPage.saveChangesAddCourses();
         Thread.sleep(3000);
-        Assert.assertEquals("Curso(s) agregado(s) satisfactoriamente", "Curso(s) agregado(s) satisfactoriamente", "Curso(s) agregado(s) satisfactoriamente");
+        WebElement elemento2 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento2.getText(), "Curso(s) agregado(s) satisfactoriamente");Thread.sleep(3000);
         learningPathPage.deleteCourseCrehana();
         learningPathPage.buttonDeleteCourse();
-        Assert.assertEquals("¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?", "¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?", "¿Estás seguro de que deseas eliminar el cursoSeguridad de la Informaciónde la ruta Requisitos extremo?");
+        WebElement elemento3 = learningPathPage.popupQuestionDeleteMessage();
+        Assert.assertEquals(elemento3.getText(), "¿Estás seguro de que deseas eliminar el curso");Thread.sleep(3000);
+        Thread.sleep(3000);
         learningPathPage.buttonDeleteConfirm();
         Thread.sleep(3000);
-        Assert.assertEquals("Curso de Seguridad de la Información borrado satisfactoriamente", "Curso de Seguridad de la Información borrado satisfactoriamente", "Curso de Seguridad de la Información borrado satisfactoriamente");
+        WebElement elemento5 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento5.getText(), "Curso de O novo líder e seu papel na sociedade da era da informação borrado satisfactoriamente");Thread.sleep(3000);
         Thread.sleep(3000);
-        WebElement elemento1 = learningPathPage.validationCoursesTotal();
-        Assert.assertEquals(elemento1.getText(), "0\n" + "Total de cursos");
+        WebElement elemento6 = learningPathPage.validationCoursesTotal();
+        Assert.assertEquals(elemento6.getText(), "0\n" + "Total de cursos");
         driver.navigate().refresh();
     }
 
@@ -66,25 +71,27 @@ public class LearningPathTest extends BaseClass {
 
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
 
         driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         Thread.sleep(4000);
         learningPathABMPage.inputLearningPathsC();
-        Assert.assertEquals("Rutas de aprendizajes", "Rutas de aprendizajes", "Rutas de aprendizajes");
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
         learningPathABMPage.inputLearningPaths("QA Track con cursos requeridos");
         Thread.sleep(6000);
         learningPathABMPage.nameCourseQATrackConCursosRequeridos();
         Thread.sleep(6000);
-        Assert.assertEquals("QA Track con cursos requeridos", "QA Track con cursos requeridos", "QA Track con cursos requeridos");
+        WebElement elemento1 = learningPathPage.titleCourseInCOurse();
+        Assert.assertEquals(elemento1.getText(), "QA Track con cursos requeridos");Thread.sleep(3000);
         learningPathPage.deleteCourseCrehana();
         learningPathPage.buttonDeleteCourse();
-        Thread.sleep(2000);
-        Assert.assertEquals("No es posible eliminar el curso", "No es posible eliminar el curso", "No es posible eliminar el curso");
-        Assert.assertEquals("La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.", "La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.", "La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.");
+        Thread.sleep(10000);
+        WebElement elemento2 = learningPathPage.popAlertNotDeleteCourse();
+        Assert.assertEquals(elemento2.getText(), "La cantidad de cursos asignados no puede ser menor a la cantidad de cursos requeridos que se configuró para completar la ruta.");Thread.sleep(3000);
         Thread.sleep(2000);
         driver.navigate().refresh();
     }
@@ -106,12 +113,14 @@ public class LearningPathTest extends BaseClass {
         panelPage.buttonLearningPaths();
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
-        Assert.assertEquals("Rutas de aprendizajes", "Rutas de aprendizajes", "Rutas de aprendizajes");
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
         learningPathABMPage.inputLearningPaths("QA Track con cursos requeridos");
         Thread.sleep(2000);
         learningPathABMPage.nameCourseQATrackConCursosRequeridos();
         Thread.sleep(3000);
-        Assert.assertEquals("QA Track con cursos requeridos", "QA Track con cursos requeridos", "QA Track con cursos requeridos");
+        WebElement elemento1 = learningPathPage.titleCourseInCOurse();
+        Assert.assertEquals(elemento1.getText(), "QA Track con cursos requeridos");Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         learningPathPage.addUser();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -122,7 +131,8 @@ public class LearningPathTest extends BaseClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         learningPathPage.inputAddUserEnter();
         learningPathPage.buttonConfirmAddUser();
-        Assert.assertEquals("Usuario(s) agregado(s) satisfactoriamente", "Usuario(s) agregado(s) satisfactoriamente", "Usuario(s) agregado(s) satisfactoriamente");
+        WebElement elemento2 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento2.getText(), "Usuario(s) agregado(s) satisfactoriamente");Thread.sleep(3000);
         Thread.sleep(6000);
         WebElement element = learningPathPage.nameFirstUser();
         Assert.assertEquals(element.getText(), "Robot 1");
@@ -223,7 +233,6 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento.getText(), "QA Track Sin Cursos Requeridos");
         WebElement elemento1 = learningPathABMPage.contadorCoursesRequired();
         Assert.assertEquals(elemento1.getText(), "0\n" + "/1");
-
         driver.navigate().refresh();
     }
 

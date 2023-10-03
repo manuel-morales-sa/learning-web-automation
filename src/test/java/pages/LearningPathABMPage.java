@@ -7,7 +7,7 @@ import javax.xml.xpath.XPath;
 
 public class LearningPathABMPage extends BasePage {
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/h3[1]")
+    @FindBy(xpath = "//*[@id=\"AdminDashboardBody\"]/div[1]/div/div/div/div/div[2]/div/h3")
     private WebElement tittleLearningPaths;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
@@ -58,49 +58,62 @@ public class LearningPathABMPage extends BasePage {
     }
 
     //-----------------------Actions Methods-----------------------//
+    public WebElement tittleLearningPaths() {
+        tittleLearningPaths.getText();
+        return tittleLearningPaths;
+    }
 
     public void InputLearningPathsC() {
+
         inputLearningPathsC.click();
     }
     public void InputLearningPaths(String Curso) {
+
         inputLearningPaths.sendKeys(Curso);
     }
-    public void NameCourseQATrackConCursosRequeridos() {
-        nameCourseQATrackConCursosRequeridos.click();
-    }
     public void ButtonCreatePath() {
+
         buttonCreatePath.click();
     }
     public void ButtonCreateTrack() {
+
         buttonCreateTrack.click();
     }
     public void inputLearningPathsC() {
+
         inputLearningPathsC.click();
     }
 
     public void inputLearningPaths(String Curso) {
+
         inputLearningPaths.sendKeys(Curso);
     }
 
     public void nameCourseQATrackConCursosRequeridos() {
+
         nameCourseQATrackConCursosRequeridos.click();
     }
 
     public void SectionPreview() {
+
         sectionPreview.click();
     }
 
     public void buttonCreatePath() {
+
         buttonCreatePath.click();
     }
 
     public void buttonCreateTrack() {
+
         buttonCreateTrack.click();
     }
     public void MenuWithOptions() {
+
         menuWithOptions.click();
     }
     public void OptionDeletePath() {
+
         optionDeletePath.click();
     }
     public WebElement MessageDeletePath() {
@@ -118,7 +131,7 @@ public class LearningPathABMPage extends BasePage {
     public void ButtonConfirmDeletePath() {
         buttonConfirmDeletePath.click();
     }
-    public WebElement ToastConfirmDeletePath() {
+    public WebElement toastConfirmDeletePath() {
         toastConfirmDeletePath.getText();
         return toastConfirmDeletePath;
     }
@@ -133,6 +146,7 @@ public class LearningPathABMPage extends BasePage {
     }
 
     public void sectionPreview() {
+
         sectionPreview.click();
     }
 
