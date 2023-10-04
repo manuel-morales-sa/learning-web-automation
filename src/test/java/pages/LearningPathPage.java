@@ -63,7 +63,7 @@ public class LearningPathPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
     private WebElement inputAddUserC;
 
-    @FindBy(xpath = "//body/div[@id='__next']/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "//input[@id='react-select-react-select-users-input-input']")
     private WebElement inputAddUserText;
 
     @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div[2]")
@@ -74,6 +74,8 @@ public class LearningPathPage extends BasePage {
 
     @FindBy(xpath = "//p[contains(text(),'Robot 1')]")
     private WebElement nameFirstUser;
+    @FindBy (xpath = "//p[contains(text(),'Usuario(s) agregado(s) satisfactoriamente')]")
+    private WebElement messageAddUserOk;
 
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte REQUISITOS.
     @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/div[1]/div[3]/div[1]/div[5]/div")
@@ -82,7 +84,7 @@ public class LearningPathPage extends BasePage {
     @FindBy(xpath = "//button[contains(text(),'Si, continuar')]")
     private WebElement confirmRequired;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[23]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[2]")
+    @FindBy(xpath = "//body/div[23]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]/button[2]/*[1]")
     private WebElement addCourseRequiredPlus;
 
     @FindBy(xpath = "/html[1]/body[1]/div[23]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/button[2]")
@@ -111,6 +113,10 @@ public class LearningPathPage extends BasePage {
     }
     //-----------------------Actions Methods-----------------------//
 
+    public WebElement messageAddUserOk() {
+        messageAddUserOk.getText();
+        return messageAddUserOk;
+    }
     public WebElement popupAddCourseOK() {
         titleCourseInCOurse.getText();
         return popupAddCourseOK;
@@ -173,12 +179,10 @@ public class LearningPathPage extends BasePage {
     }
 
     public void buttonDeleteCourse() {
-
         buttonDeleteCourse.click();
     }
 
     public void buttonDeleteConfirm() {
-
         buttonDeleteConfirm.click();
     }
 
@@ -187,47 +191,38 @@ public class LearningPathPage extends BasePage {
     }
 
     public void inputAddUserC() {
-
         inputAddUserC.click();
     }
 
     public void inputAddUserText(String user) {
-
         inputAddUserText.sendKeys(user);
     }
 
     public void buttonConfirmAddUser() {
-
         buttonConfirmAddUser.click();
     }
 
     public void inputAddUserEnter() {
-
         inputAddUserEnter.click();
     }
 
     public void editRequired() {
-
         editRequired.click();
     }
 
     public void confirmRequired() {
-
         confirmRequired.click();
     }
 
     public void addCourseRequiredPlus() {
-
         addCourseRequiredPlus.click();
     }
 
     public void addProjectRequiredPlus() {
-
         addProjectRequiredPlus.click();
     }
 
     public void saveAddProjectRequiredPlus() {
-
         saveAddProjectRequiredPlus.click();
     }
 
@@ -237,17 +232,14 @@ public class LearningPathPage extends BasePage {
     }
 
     public void deleteCourseCrehana() {
-
         deleteCourseCrehana.click();
     }
 
     public void addCourseElevate() {
-
         addCourseElevate.click();
     }
 
     public void addCourseIfNotExists() {
-
         addCourseIfNotExists.click();
     }
 

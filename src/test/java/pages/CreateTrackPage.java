@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class CreateTrackPage extends BasePage {
 
-    //1° paso de creacion de Track
     @FindBy(css = "#trackName")
     private WebElement nameNewTrack;
 
@@ -15,10 +14,8 @@ public class CreateTrackPage extends BasePage {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]")
     private WebElement addRewards;
-
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/label[1]/div[1]/div[1]/input[1]")
     private WebElement addCoursesInTrack;
-
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/label[1]/div[1]/div[1]/input[1]")
     private WebElement addCoursesInTrackClear;
 
@@ -40,7 +37,6 @@ public class CreateTrackPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/button[1]")
     private WebElement buttonNext;
 
-    //2° paso de creacion de Track
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/section[1]/section[1]/div[1]/div[2]/div[1]/button[1]")
     private WebElement buttonSubstraccionCourse;
 
@@ -52,12 +48,10 @@ public class CreateTrackPage extends BasePage {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[30]")
     private WebElement dateFinish;
-    //3° paso de creacion de Track
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/label[1]/span[1]/*[1]")
     private WebElement selectFirstUser;
 
-    //4° paso de creacion de Track
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/button[1]")
     private WebElement buttonConfirmTrack;
 
@@ -75,6 +69,16 @@ public class CreateTrackPage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[10]/div[4]/div/div/div/div/div/div/div/div/button[2]")
     private WebElement buttonSaveAndExit;
+    @FindBy(xpath = "//p[contains(text(),'¡Genial! Estás a punto de dar un gran paso')]")
+    private WebElement messageGenial;
+    @FindBy(xpath = "//p[contains(text(),'Si estás seguro de los datos ingresados y los curs')]")
+    private WebElement messageGenialConfirmar;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/section[1]/div[1]/div[2]/div[2]/div[1]/div[6]/section[1]/p[1]")
+    private WebElement resumeListUsers;
+    @FindBy (xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/section[1]/div[1]/div[2]/div[2]/div[1]/div[7]/section[1]/p[1]")
+    private WebElement resumeListUsersCourseWithRewars;
+    @FindBy(xpath = "//p[contains(text(),'¡Tu track ha sido creado!')]")
+    private WebElement messageTrackCreado;
 
 
     //-----------------------Constructor-----------------------//
@@ -169,6 +173,26 @@ public class CreateTrackPage extends BasePage {
 
     public void buttonSaveAndExit() {
         buttonSaveAndExit.click();
+    }
+    public WebElement messageTrackCreado() {
+        messageTrackCreado.getText();
+        return messageTrackCreado;
+    }
+    public WebElement messageGenial() {
+        messageGenial.getText();
+        return messageGenial;
+    }
+    public WebElement messageGenialConfirmar() {
+        messageGenialConfirmar.getText();
+        return messageGenialConfirmar;
+    }
+    public WebElement resumeListUsers() {
+        resumeListUsers.getText();
+        return resumeListUsers;
+    }
+    public WebElement resumeListUsersCourseWithRewars() {
+        resumeListUsersCourseWithRewars.getText();
+        return resumeListUsersCourseWithRewars;
     }
 
 }
