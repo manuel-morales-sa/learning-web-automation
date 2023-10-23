@@ -729,5 +729,8 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento4.getText(), "Se ha eliminado el borrador QA Track Borrador éxitosamente");
 
     }
+    @Test
+    public void draftCoursesAreNotDeleted() throws Exception {
 
+    }
 }
