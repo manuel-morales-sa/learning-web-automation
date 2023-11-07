@@ -74,6 +74,8 @@ public class LearningPathABMPage extends BasePage {
     private WebElement buttonReactivateConfirm;
     @FindBy(xpath = "//p[contains(text(),'Una ves eliminado, no podrás recuperar el borrador')]")
     private WebElement messageDownAlertDelete;
+    @FindBy(xpath = "//span[contains(text(),'Duplicar')]")
+    private WebElement buttonDuplicateDraftCourse;
 
 
     //-----------------------Constructor-----------------------//
@@ -132,6 +134,9 @@ public class LearningPathABMPage extends BasePage {
 
     public void nameCourseQATrackConCursosRequeridos() {
         nameCourseQATrackConCursosRequeridos.click();
+    }
+    public void buttonDuplicateDraftCourse() {
+        buttonDuplicateDraftCourse.click();
     }
 
     public void sectionPreview() {
