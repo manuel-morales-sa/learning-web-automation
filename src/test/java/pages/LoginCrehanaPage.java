@@ -8,28 +8,37 @@ public class LoginCrehanaPage extends BasePage {
 
     //------------------------------------------Find selectors---------------------------------------//
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[1]/div/svg[3]")
-    private WebElement LoginCrehanaLogo;
+    private WebElement loginCrehanaLogo;
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/div[1]/h3")
-    private WebElement LoginCrehanaLabel;
+    private WebElement loginCrehanaLabel;
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/div[2]/div/button[1]/svg")
-    private WebElement LoginFacebookButton;
+    private WebElement loginFacebookButton;
+
     @FindBy(id = "customGoogleButton-1")
-    private WebElement LoginGoogleButton;
-    @FindBy(id = "username")
-    private WebElement LoginEmailTextInput;
-    @FindBy(id = "password")
-    private WebElement LoginPasswordTextInput;
+    private WebElement loginGoogleButton;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/label[1]/div[1]/div[1]/input[1]")
+    private WebElement loginEmailTextInput;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/label[1]/div[1]/div[1]/input[1]")
+    private WebElement loginPasswordTextInput;
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/a[1]")
-    private WebElement LoginForgotPasswordButton;
+    private WebElement loginForgotPasswordButton;
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/button")
-    private WebElement LoginStartSessionButton;
+    private WebElement loginStartSessionButton;
+
     @FindBy(id = "link-light link-level2")
-    private WebElement LoginSignUpButton;
+    private WebElement loginSignUpButton;
+
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/a[3]")
-    private WebElement LoginStartSessionOrgButton;
+    private WebElement loginStartSessionOrgButton;
 
     @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/div[4]/span")
-    private WebElement LoginAlertErrorMessage;
+    private WebElement loginAlertErrorMessage;
 
     //-----------------------Constructor-----------------------//
     public LoginCrehanaPage(WebDriver driver) {
@@ -37,43 +46,44 @@ public class LoginCrehanaPage extends BasePage {
     }
 
     //-----------------------Actions Methods-----------------------//
-    public void LoginCrehanaLogo() {
-        LoginCrehanaLogo.getTagName();
+    public void loginCrehanaLogo() {
+        loginCrehanaLogo.getTagName();
     }
 
-    public void LoginCrehanaLabel() {
-        LoginCrehanaLabel.getText();
+    public void loginCrehanaLabel() {
+        loginCrehanaLabel.getText();
     }
 
-    public void LoginFacebookButton() {
-        LoginFacebookButton.click();
+    public void loginFacebookButton() {
+        loginFacebookButton.click();
     }
 
-    public void LoginGoogleButton() {
-        LoginGoogleButton.click();
+    public void loginGoogleButton() {
+        loginGoogleButton.click();
     }
 
-    public void LoginEmailTextInput(String emailText) {
-        LoginEmailTextInput.sendKeys(emailText);
+    public void loginEmailTextInput(String emailText) {
+        loginEmailTextInput.sendKeys(emailText);
     }
 
-    public void LoginPasswordTextInput(String passwordText) {
-        LoginPasswordTextInput.sendKeys(passwordText);
+    public void loginPasswordTextInput(String passwordText) {
+        loginPasswordTextInput.sendKeys(passwordText);
     }
 
-    public void LoginForgotPasswordButton() {
-        LoginForgotPasswordButton.click();
+    public void loginForgotPasswordButton() {
+        loginForgotPasswordButton.click();
     }
 
-    public void LoginStartSessionButton() {
-        LoginStartSessionButton.click();
+    public void loginStartSessionButton() {
+        loginStartSessionButton.click();
     }
 
-    public void LoginSignUpButton() {
-        LoginSignUpButton.click();
+    public void loginSignUpButton() {
+        loginSignUpButton.click();
     }
 
-    public void LoginStartSessionOrgButton() {
-        LoginStartSessionOrgButton.click();
+    public void loginStartSessionOrgButton() {
+        loginStartSessionOrgButton.click();
     }
+
 }

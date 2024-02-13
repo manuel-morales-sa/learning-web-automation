@@ -10,14 +10,15 @@ public class LoginFunctions extends BasePage {
     @FindBy(id = "button_button_stack_1")
     private WebElement landingLoginButton;
 
-    @FindBy(id = "username")
-    private WebElement LoginEmailTextInput;
+
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[3]/label[1]/div[1]/div[1]/input[1]")
+    private WebElement loginEmailTextInput;
 
     @FindBy(id = "password")
-    private WebElement LoginPasswordTextInput;
+    private WebElement loginPasswordTextInput;
 
-    @FindBy(xpath = "//*[@id=\"__next\"]/div/div[4]/div/div/div[2]/div/div/form/button")
-    private WebElement LoginStartSessionButton;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/section[1]/section[1]/div[2]/div[1]/div[1]/div[2]/form[1]/div[4]/button[1]")
+    private WebElement loginStartSessionButton;
 
     public LoginFunctions(WebDriver driver) {
         super(driver);
@@ -25,9 +26,10 @@ public class LoginFunctions extends BasePage {
     }
 
     public void loginActions(String emailText, String passwordText) {
-        landingLoginButton.click();
-        LoginEmailTextInput.sendKeys(emailText);
-        LoginPasswordTextInput.sendKeys(passwordText);
-        LoginStartSessionButton.click();
+        //landingLoginButton.click();
+        loginEmailTextInput.sendKeys(emailText);
+        loginPasswordTextInput.sendKeys(passwordText);
+        loginStartSessionButton.click();
     }
+
 }
