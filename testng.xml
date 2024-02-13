@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="parallel">
     <test name="Device-1" >
-        <parameter name="url" value="https://www.crehana.com/" />
+        <parameter name="url" value="https://qa.creha.co/org/crehana-automation/entrar/" />
         <classes>
-            <class name="testScript.LoginCrehanaTest"/>
+            <class name="testScript.LearningPath1Test"/>
         </classes>
     </test>
 </suite>
