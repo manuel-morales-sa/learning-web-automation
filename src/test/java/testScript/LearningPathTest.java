@@ -23,7 +23,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(3000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -75,7 +75,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(3000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(3000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -121,7 +121,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(3000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://qa.creha.co/org/crehana-automation");
         Thread.sleep(6000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -157,7 +157,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -217,7 +217,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -261,7 +261,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         PanelPage.buttonContent();
         PanelPage.buttonLearningPaths();
@@ -299,7 +299,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(8000);
         WebElement elemento2 = createTrackPage.messageTrackCreado();
         Assert.assertEquals(elemento2.getText(), "¡Tu track ha sido creado!");
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
         learningPathABMPage.inputLearningPaths("QA Track Con Curso Elevate");
@@ -318,7 +318,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -364,7 +364,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(8000);
         WebElement elemento2 = createTrackPage.messageTrackCreado();
         Assert.assertEquals(elemento2.getText(), "¡Tu track ha sido creado!");
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
         learningPathABMPage.inputLearningPaths("QA Track Con Cursos Crehana y Elevate");
@@ -385,7 +385,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -423,7 +423,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento1.getText(), "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
         createTrackPage.buttonConfirmTrackFinal();
         Thread.sleep(12000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
         learningPathABMPage.inputLearningPaths("QA Track Con 4 Cursos Requeridos");
@@ -444,7 +444,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -484,7 +484,7 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento1.getText(), "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
         createTrackPage.buttonConfirmTrackFinal();
         Thread.sleep(12000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
         learningPathABMPage.inputLearningPaths("QA Track Con Rewards");
@@ -505,7 +505,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         PanelPage.buttonContent();
         PanelPage.buttonLearningPaths();
@@ -534,7 +534,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(6000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -586,7 +586,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -620,7 +620,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(4000);
         WebElement elemento2 = createTrackPage.messageTrackCreado();
         Assert.assertEquals(elemento2.getText(), "¡Tu track ha sido creado!");
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel/content/paths/");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(2000);
         learningPathABMPage.inputLearningPathsC();
         learningPathABMPage.inputLearningPaths("QA Track Sin Cursos Requeridos");
@@ -640,7 +640,7 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(3000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -700,7 +700,7 @@ public class LearningPathTest extends BaseClass {
         driver.manage().window().maximize();
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
@@ -745,7 +745,7 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(6000);
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
-        driver.navigate().to("https://qa.creha.co/org/crehana-automation/panel");
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
         Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
