@@ -20,11 +20,12 @@ public class LearningPath1Test extends BaseClass {
         LearningPathPage learningPathPage = new LearningPathPage(driver);
 
         driver.manage().window().maximize();
+        Thread.sleep(5000);
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(2000);
 
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(3000);
+        Thread.sleep(8000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);

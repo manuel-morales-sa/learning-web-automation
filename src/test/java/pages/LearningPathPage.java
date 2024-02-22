@@ -12,10 +12,10 @@ public class LearningPathPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[2]/div[1]/button[1]")
     private WebElement buttonAddCourses;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[9]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "/html/body/div[12]/div[4]/div/div/div/div/div/div/div/label/div/div/input")
     private WebElement inputAddCoursesC;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[9]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/label[1]/div[1]/div[1]/input[1]")
+    @FindBy(xpath = "/html/body/div[12]/div[4]/div/div/div/div/div/div/div/label/div/div/input")
     private WebElement inputAddCourses;
 
     @FindBy(xpath = "/html[1]/body[1]/div[9]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")
@@ -50,7 +50,7 @@ public class LearningPathPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[9]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
     private WebElement buttonOK;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[3]/p[1]/button[1]")
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/div[2]/div[5]/div/div[1]/div[2]/button[1]/span")
     private WebElement addCourseIfNotExists;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]")
