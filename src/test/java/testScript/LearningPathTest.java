@@ -185,19 +185,15 @@ public class LearningPathTest extends BaseClass {
         learningPathABMPage.buttonCreateTrack();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.nameNewTrack();
-        createTrackPage.inputNameNewTrackSet("QA Track Con 4 Cursos Requeridos");
+        createTrackPage.inputNameNewTrackSet("QA Track Con 3 Cursos Requeridos");
         createTrackPage.addCoursesInTrack("ia");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.selectFirtsCourseInTrack();
         createTrackPage.select2CourseInTrack();
         createTrackPage.select3CourseInTrack();
-        createTrackPage.select4CourseInTrack();
         Thread.sleep(8000);// Dejo un tiempo hasta validar como eliminar el popup que aparece
-        createTrackPage.select5CourseInTrack();
-        Thread.sleep(8000);
         createTrackPage.buttonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        createTrackPage.buttonSubstraccionCourse();
         createTrackPage.dateStart();
         createTrackPage.dateFinish();
         createTrackPage.buttonNext();
@@ -217,11 +213,11 @@ public class LearningPathTest extends BaseClass {
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
-        learningPathABMPage.inputLearningPaths("QA Track Con 4 Cursos Requeridos");
+        learningPathABMPage.inputLearningPaths("QA Track Con 3 Cursos Requeridos");
         WebElement elemento3 = learningPathABMPage.nameCourseGet();
-        Assert.assertEquals(elemento3.getText(), "QA Track Con 4 Cursos Requeridos");
+        Assert.assertEquals(elemento3.getText(), "QA Track Con 3 Cursos Requeridos");
         WebElement elemento4 = learningPathABMPage.contadorCoursesRequired();
-        Assert.assertEquals(elemento4.getText(), "4\n" + "/5");
+        Assert.assertEquals(elemento4.getText(), "3\n" + "/3");
         driver.navigate().refresh();
     }
     @Test
