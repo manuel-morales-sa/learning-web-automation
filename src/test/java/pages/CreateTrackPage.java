@@ -43,19 +43,19 @@ public class CreateTrackPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/section[1]/section[1]/div[3]/div[2]/div[1]/button[2]")
     private WebElement buttonPlusRewards;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[25]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[28]")
     private WebElement dateStart;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[30]")
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/section[1]/section[1]/section[1]/div[3]/button[29]")
     private WebElement dateFinish;
 
     @FindBy(xpath = "//tbody/tr[1]/td[1]/div[1]/label[1]/span[1]/*[1]")
     private WebElement selectFirstUser;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/button[1]")
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/section/div/div/button")
     private WebElement buttonConfirmTrack;
 
-    @FindBy(xpath = "/html/body/div[13]/div[4]/div/div/div/div/div/div/div/div/button[2]")
+    @FindBy(xpath = "/html/body/div[16]/div[4]/div/div/div/div/div/div/div/div/button[2]")
     private WebElement buttonConfirmTrackFinal;
 
     @FindBy(xpath = "/html[1]/body[1]/div[15]/div[4]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]")
@@ -67,7 +67,7 @@ public class CreateTrackPage extends BasePage {
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/section[1]/div[1]/div[1]/section[1]/button[1]")
     private WebElement buttonCancelPath;
 
-    @FindBy(xpath = "/html/body/div[10]/div[4]/div/div/div/div/div/div/div/div/button[2]")
+    @FindBy(xpath = "/html/body/div[13]/div[4]/div/div/div/div/div/div/div/div/button[2]")
     private WebElement buttonSaveAndExit;
     @FindBy(xpath = "//p[contains(text(),'¡Genial! Estás a punto de dar un gran paso')]")
     private WebElement messageGenial;
