@@ -280,6 +280,35 @@ public class LearningPathTest extends BaseClass {
         driver.navigate().refresh();
     }
     @Test
+    public void FDeletePathWithCoursesElevate() throws Exception {
+        LoginFunctions LoginFunctions = new LoginFunctions(driver);
+        PanelPage PanelPage = new PanelPage(driver);
+        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
+        CreateTrackPage CreateTrackPage = new CreateTrackPage(driver);
+
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
+        Thread.sleep(6000);
+
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
+        Thread.sleep(8000);
+        PanelPage.buttonContent();
+        PanelPage.buttonLearningPaths();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        learningPathABMPage.inputLearningPathsC();
+        learningPathABMPage.inputLearningPaths("QA Track Con 3 Cursos Requeridos");
+        learningPathABMPage.menuWithOptions();
+        learningPathABMPage.optionDeletePath();
+        Thread.sleep(8000);
+        WebElement elemento = learningPathABMPage.messageDeletePath();
+        Assert.assertEquals(elemento.getText(), "¿Deseas eliminar la ruta");
+        learningPathABMPage.buttonConfirmDeletePath();
+        Thread.sleep(3000);
+        WebElement elemento3 = learningPathABMPage.textPopUpAlert();
+        Assert.assertEquals(elemento3.getText(), "Se ha eliminado el borrador QA Track Con 3 Cursos Requeridos éxitosamente");
+    }
+    @Test
     public void AdminAddUsersInPathActual() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);
         PanelPage panelPage = new PanelPage(driver);
@@ -549,37 +578,6 @@ public class LearningPathTest extends BaseClass {
     }
 
 
-
-
-
-    @Test
-    public void DeletePathWithCoursesElevate() throws Exception {
-        LoginFunctions LoginFunctions = new LoginFunctions(driver);
-        PanelPage PanelPage = new PanelPage(driver);
-        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
-        CreateTrackPage CreateTrackPage = new CreateTrackPage(driver);
-
-        driver.manage().window().maximize();
-        LoginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(6000);
-        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
-        PanelPage.buttonContent();
-        PanelPage.buttonLearningPaths();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        learningPathABMPage.inputLearningPathsC();
-        learningPathABMPage.inputLearningPaths("QA Track Con Curso Elevate");
-        learningPathABMPage.menuWithOptions();
-        learningPathABMPage.optionDeletePath();
-        Thread.sleep(8000);
-        WebElement elemento = learningPathABMPage.messageDeletePath();
-        Assert.assertEquals(elemento.getText(), "¿Deseas eliminar la ruta");
-        learningPathABMPage.buttonConfirmDeletePath();
-        Thread.sleep(3000);
-        WebElement elemento3 = learningPathABMPage.textPopUpAlert();
-        Assert.assertEquals(elemento3.getText(), "Se ha eliminado el borrador QA Track Con Curso Elevate éxitosamente");
-    }
-
     @Test
     public void EditTrackAdminEdit() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);
@@ -732,12 +730,6 @@ public class LearningPathTest extends BaseClass {
         Assert.assertEquals(elemento4.getText(), "Se ha eliminado el borrador QA Track Borrador éxitosamente");
 
     }
-    /*
-    @Test
-    public void draftCoursesAreNotDeleted() throws Exception {
-        //bug
-    }
-    */
     @Test
     public void draftCoursesWithTitulo() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);
