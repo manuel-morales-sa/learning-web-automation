@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 public class LearningPathPage extends BasePage {
 
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte CURSOS.
+
+    @FindBy(xpath = "/html/body/div[1]/div/div/section/section/div[2]/div/div/div[2]/form/div[2]/button")
+    private WebElement buttonStartSession;
     @FindBy(xpath = "//*[@id=\"AdminDashboardBody\"]/div[1]/div[2]/div[2]/div/div[1]/div[2]/div[1]/div/h3")
     private WebElement titleCourseInCOurse;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[2]/div[1]/button[1]")
@@ -146,6 +149,8 @@ public class LearningPathPage extends BasePage {
         titleCourseInCOurse.getText();
         return titleCourseInCOurse;
     }
+
+    public void buttonStartSession() {buttonStartSession.click();}
     public void deleteCourseRequired() {
         deleteCourseRequired.click();
     }
