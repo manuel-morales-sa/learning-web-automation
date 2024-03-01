@@ -10,7 +10,6 @@ import java.time.Duration;
 
 public class BaseClass {
     public static WebDriver driver;
-
     @BeforeMethod()
     @Parameters({"url"})
     public void initialize(String url) throws InterruptedException, MailcapParseException {

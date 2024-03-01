@@ -8,11 +8,16 @@ public class UserAdministratorGamification extends BasePage {
 
     //------------------------------------------Find selectors---------------------------------------//
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/a[1]/div/picture/img")
-    private WebElement orgLogo;
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[1]/button[4]/div")
+    private WebElement buttonGamificacion;
 
-    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/section/div[2]/h1/p")
-    private WebElement welcomeAssert;
+    @FindBy(xpath = "/html/body/div[1]/div/div[1]/div[1]/div[5]/div/ul/li[1]/button")
+    private WebElement buttonProgressGamificacion;
+
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div[1]/div/div/div/div/div[2]/div/h3")
+    private WebElement TitleGamificacion;
+
+
 
     //-----------------------Constructor-----------------------//
 
@@ -21,13 +26,16 @@ public class UserAdministratorGamification extends BasePage {
     }
 
     //-----------------------Actions Methods-----------------------//
-    public void orgLogo() {
-        orgLogo.click();
+    public void buttonGamificacion() {
+        buttonGamificacion.click();
+    }
+    public void buttonProgressGamificacion() {
+        buttonProgressGamificacion.click();
     }
 
-    public WebElement welcomeAssert() {
-        welcomeAssert.getText();
-        return welcomeAssert;
+    public WebElement TitleGamificacion() {
+        TitleGamificacion.getText();
+        return TitleGamificacion;
     }
 
 
