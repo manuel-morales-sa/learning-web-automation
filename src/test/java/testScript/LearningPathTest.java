@@ -280,7 +280,7 @@ public class LearningPathTest extends BaseClass {
         driver.navigate().refresh();
     }
     @Test
-    public void FDeletePathWithCoursesElevate() throws Exception {
+    public void FDeletePathWithCourses() throws Exception {
         LoginFunctions LoginFunctions = new LoginFunctions(driver);
         PanelPage PanelPage = new PanelPage(driver);
         LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
@@ -307,6 +307,68 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(3000);
         WebElement elemento3 = learningPathABMPage.textPopUpAlert();
         Assert.assertEquals(elemento3.getText(), "Se ha eliminado el borrador QA Track Con 3 Cursos Requeridos éxitosamente");
+    }
+    @Test
+    public void GDeactivatePath() throws Exception {
+        LoginFunctions loginFunctions = new LoginFunctions(driver);
+        PanelPage panelPage = new PanelPage(driver);
+        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
+
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
+        Thread.sleep(2000);
+
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
+        Thread.sleep(15000);
+        panelPage.buttonContent();
+        panelPage.buttonLearningPaths();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        learningPathABMPage.inputLearningPathsC();
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
+        learningPathABMPage.inputLearningPaths("QA Track Sin Cursos Requeridos");
+        Thread.sleep(5000);
+        learningPathABMPage.menuWithOptions();
+        learningPathABMPage.buttonDeactivatePath();
+        WebElement elemento1 = learningPathABMPage.messageQuestionDeactivate();
+        Assert.assertEquals(elemento1.getText(), "¿Deseas desactivar la ruta?");
+        learningPathABMPage.buttonConfirmDeactivate();
+        WebElement elemento2 = learningPathABMPage.stateDeactivatePath();
+        WebElement elemento3 = null;
+        if (learningPathABMPage.isElementPresent()) {
+            elemento3 = learningPathABMPage.stateDeactivatePath();
+            String textoElemento3 = elemento3.getText();
+            if (textoElemento3.equals("desactivada")) {
+                System.out.println("El texto del elemento es 'desactivada'. Test Passed.");
+            } else {
+                Assert.assertTrue(Boolean.parseBoolean("El texto del elemento no es 'desactivada'. Test Failed."));
+            }
+        } else {
+            System.out.println("El elemento no está presente. Test Passed.");
+        }
+
+        Assert.assertEquals(elemento2.getText(), "desactivada");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        learningPathABMPage.menuWithOptions();
+        learningPathABMPage.buttonActivatePath();
+        WebElement elemento4 = learningPathABMPage.messageQuestionActivate();
+        Assert.assertEquals(elemento4.getText(), "¿Deseas reactivar la ruta?");
+        learningPathABMPage.buttonReactivateConfirm();
+        Thread.sleep(3000);
+        WebElement elemento5 = null;
+        if (learningPathABMPage.isElementPresent()) {
+            elemento5 = learningPathABMPage.stateDeactivatePath();
+            String textoElemento4 = elemento5.getText();
+            if (textoElemento4.equals("desactivada")) {
+                Assert.fail("El texto del elemento es 'desactivada'. Test fallido.");
+            } else {
+                System.out.println("Test Passed");
+            }
+        } else {
+            System.out.println("El elemento no está presente. Test Passed.");
+        }
+
     }
     @Test
     public void AdminAddUsersInPathActual() throws Exception {
@@ -632,66 +694,6 @@ public class LearningPathTest extends BaseClass {
     }
 
 
-    @Test
-    public void FDeactivatePath() throws Exception {
-        LoginFunctions loginFunctions = new LoginFunctions(driver);
-        PanelPage panelPage = new PanelPage(driver);
-        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
-
-        driver.manage().window().maximize();
-        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(2000);
-
-        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(3000);
-        panelPage.buttonContent();
-        panelPage.buttonLearningPaths();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathABMPage.inputLearningPathsC();
-        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
-        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
-        learningPathABMPage.inputLearningPaths("QA Track Sin Cursos Requeridos");
-        learningPathABMPage.menuWithOptions();
-        learningPathABMPage.buttonDeactivatePath();
-        WebElement elemento1 = learningPathABMPage.messageQuestionDeactivate();
-        Assert.assertEquals(elemento1.getText(), "¿Deseas desactivar la ruta?");
-        learningPathABMPage.buttonConfirmDeactivate();
-        WebElement elemento2 = learningPathABMPage.stateDeactivatePath();
-        WebElement elemento3 = null;
-        if (learningPathABMPage.isElementPresent()) {
-            elemento3 = learningPathABMPage.stateDeactivatePath();
-            String textoElemento3 = elemento3.getText();
-            if (textoElemento3.equals("desactivada")) {
-                System.out.println("El texto del elemento es 'desactivada'. Test Passed.");
-            } else {
-                Assert.assertTrue(Boolean.parseBoolean("El texto del elemento no es 'desactivada'. Test Failed."));
-            }
-        } else {
-            System.out.println("El elemento no está presente. Test Passed.");
-        }
-
-        Assert.assertEquals(elemento2.getText(), "desactivada");
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathABMPage.menuWithOptions();
-        learningPathABMPage.buttonActivatePath();
-        WebElement elemento4 = learningPathABMPage.messageQuestionActivate();
-        Assert.assertEquals(elemento4.getText(), "¿Deseas reactivar la ruta?");
-        learningPathABMPage.buttonReactivateConfirm();
-        Thread.sleep(3000);
-        WebElement elemento5 = null;
-        if (learningPathABMPage.isElementPresent()) {
-            elemento5 = learningPathABMPage.stateDeactivatePath();
-            String textoElemento4 = elemento5.getText();
-            if (textoElemento4.equals("desactivada")) {
-                Assert.fail("El texto del elemento es 'desactivada'. Test fallido.");
-            } else {
-                System.out.println("Test Passed");
-            }
-        } else {
-            System.out.println("El elemento no está presente. Test Passed.");
-        }
-
-    }
     @Test
     public void deleteSaveDraftCourses() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);

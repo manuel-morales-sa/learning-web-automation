@@ -38,7 +38,7 @@ public class LearningPathABMPage extends BasePage {
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/a[2]/div[1]/span[1]")
     private WebElement sectionPreview;
-    @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/button[1]/*[1]")
+    @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/div[1]/button[1]")
     private WebElement menuWithOptions;
     @FindBy(xpath = "//tbody/tr[1]/td[9]/div[1]/div[1]/div[1]/div[4]/button[1]")
     private WebElement optionDeletePath;
