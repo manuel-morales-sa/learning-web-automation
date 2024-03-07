@@ -11,7 +11,10 @@ public class CreateTrackPage extends BasePage {
 
     @FindBy(css = "#trackName")
     private WebElement inputNameNewTrackSet;
-
+    @FindBy (xpath = "/html/body/div[18]/div[3]/div/div/div/div")
+    private WebElement popUpInTrack;
+    @FindBy(xpath = "/html/body/div[18]/div[3]/div/div/div/div/button")
+    private WebElement buttonEntendido;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/section[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]")
     private WebElement addRewards;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/section[1]/div[2]/div[1]/label[1]/div[1]/div[1]/input[1]")
@@ -102,7 +105,12 @@ public class CreateTrackPage extends BasePage {
     public void addCoursesInTrack(String ia) {
         addCoursesInTrack.sendKeys(ia);
     }
-
+    public void popUpInTrack() {
+        popUpInTrack.click();
+    }
+    public void buttonEntendido() {
+        buttonEntendido.click();
+    }
     public void addCoursesInTrackClear() {
         addCoursesInTrack.clear();
     }

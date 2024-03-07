@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,9 +7,9 @@ import org.openqa.selenium.support.FindBy;
 public class PanelPage extends BasePage {
 
     @FindBy(xpath = "/html/body/div[6]/div[4]/div/div/div/div/div/div")
-    private WebElement popUpPanelAdmin;
-    @FindBy(xpath = "/html/body/div[6]/div[4]/div/div/div/div/div/button/svg/path")
-    private WebElement popUpPanelAdminEsc;
+    private WebElement popUpPanelAdminCenter;
+    @FindBy(xpath = "/html/body/div[6]/div[4]/div/div/div/div/div/button")
+    private WebElement popUpPanelAdminClose;
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/button[3]/div[1]/div[1]/p[1]")
     private WebElement buttonContent;
 
@@ -31,8 +30,7 @@ public class PanelPage extends BasePage {
     public void buttonLearningPaths() {
         buttonLearningPaths.click();
     }
-    public void popUpPanelAdmin() {popUpPanelAdmin.click();}
-
-    public void popUpPanelAdminEsc() {popUpPanelAdminEsc.click();}
+    public void popUpPanelAdminCenter() {popUpPanelAdminCenter.click();}
+    public void popUpPanelAdminClose() {popUpPanelAdminClose.click();}
 
 }

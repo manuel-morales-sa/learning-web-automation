@@ -25,7 +25,10 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(2000);
 
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -77,7 +80,10 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -122,7 +128,10 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(2000);
 
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -177,7 +186,10 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -190,8 +202,11 @@ public class LearningPathTest extends BaseClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.selectFirtsCourseInTrack();
         createTrackPage.select2CourseInTrack();
+        createTrackPage.popUpInTrack();
+        createTrackPage.buttonEntendido();
         createTrackPage.select3CourseInTrack();
-        Thread.sleep(8000);// Dejo un tiempo hasta validar como eliminar el popup que aparece
+
+        Thread.sleep(2000);
         createTrackPage.buttonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.dateStart();
@@ -232,7 +247,10 @@ public class LearningPathTest extends BaseClass {
         loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
         Thread.sleep(6000);
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -246,9 +264,12 @@ public class LearningPathTest extends BaseClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.selectFirtsCourseInTrack();
         createTrackPage.select2CourseInTrack();
-        Thread.sleep(8000);// Dejo un tiempo hasta validar como eliminar el popup que aparece
+        Thread.sleep(2000);
+        createTrackPage.popUpInTrack();
+        createTrackPage.buttonEntendido();
+        Thread.sleep(2000);
         createTrackPage.select5CourseInTrack();
-        Thread.sleep(8000);
+        Thread.sleep(3000);
         createTrackPage.buttonNext();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.buttonSubstraccionCourse();
@@ -284,7 +305,7 @@ public class LearningPathTest extends BaseClass {
         LoginFunctions LoginFunctions = new LoginFunctions(driver);
         PanelPage PanelPage = new PanelPage(driver);
         LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
-        CreateTrackPage CreateTrackPage = new CreateTrackPage(driver);
+        PanelPage panelPage = new PanelPage(driver);
 
         driver.manage().window().maximize();
         Thread.sleep(5000);
@@ -292,7 +313,10 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(6000);
 
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         PanelPage.buttonContent();
         PanelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -320,7 +344,10 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(2000);
 
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(15000);
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
         panelPage.buttonContent();
         panelPage.buttonLearningPaths();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -596,9 +623,11 @@ public class LearningPathTest extends BaseClass {
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         createTrackPage.selectFirtsCourseInTrack();
         createTrackPage.select2CourseInTrack();
+        createTrackPage.popUpInTrack();
+        createTrackPage.buttonEntendido();
         createTrackPage.select3CourseInTrack();
         createTrackPage.select4CourseInTrack();
-        Thread.sleep(8000);// Dejo un tiempo hasta validar como eliminar el popup que aparece
+        Thread.sleep(4000);
         createTrackPage.addCoursesInTrackClear();
         createTrackPage.addCoursesInTrack("QA curso propio");
         Thread.sleep(8000);
