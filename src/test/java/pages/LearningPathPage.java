@@ -57,20 +57,20 @@ public class LearningPathPage extends BasePage {
     private WebElement validationCoursesTotal;
 
     //Estos elementos pertenecen a Objetos dentro de una Ruta de aprendizaje. Parte USUARIOS.
-    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[3]/p/button")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[1]/div[2]/div[4]/div[1]/div[2]/button[1]")
     private WebElement addUser;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/div/input")
     private WebElement inputAddUserC;
 
-    @FindBy(xpath = "//input[@id='react-select-react-select-users-input-input']")
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[1]/div[1]/div/div/div[2]/div/div/input")
     private WebElement inputAddUserText;
 
-    @FindBy(xpath = "/html/body/div[1]/main/div[2]/div[2]/div/div/div[1]/div/div[2]")
-    private WebElement inputAddUserEnter;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[2]/div[2]/div/div/div[1]/table/tbody/tr/td[1]/div/label/span/svg/path")
+    private WebElement inputAddUserClickUser;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/main[1]/div[2]/div[2]/div[1]/div[1]/div[1]/button[1]")
-    private WebElement buttonConfirmAddUser;
+    @FindBy(xpath = "/html/body/div[1]/div/div[2]/div[3]/div/div/button[2]")
+    private WebElement buttonConfirmAddUsersValidated;
 
     @FindBy(xpath = "//p[contains(text(),'Robot 1')]")
     private WebElement nameFirstUser;
@@ -198,12 +198,12 @@ public class LearningPathPage extends BasePage {
         inputAddUserText.sendKeys(user);
     }
 
-    public void buttonConfirmAddUser() {
-        buttonConfirmAddUser.click();
+    public void buttonConfirmAddUsersValidated() {
+        buttonConfirmAddUsersValidated.click();
     }
 
-    public void inputAddUserEnter() {
-        inputAddUserEnter.click();
+    public void inputAddUserClickUser() {
+        inputAddUserClickUser.click();
     }
 
     public void editRequired() {

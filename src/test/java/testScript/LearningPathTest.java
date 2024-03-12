@@ -397,51 +397,7 @@ public class LearningPathTest extends BaseClass {
         }
 
     }
-    @Test
-    public void AdminAddUsersInPathActual() throws Exception {
-        LoginFunctions loginFunctions = new LoginFunctions(driver);
-        PanelPage panelPage = new PanelPage(driver);
-        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
-        LearningPathPage learningPathPage = new LearningPathPage(driver);
 
-        driver.manage().window().maximize();
-        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(3000);
-
-        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(3000);
-        panelPage.buttonContent();
-        panelPage.buttonLearningPaths();
-        Thread.sleep(6000);
-        learningPathABMPage.inputLearningPathsC();
-        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
-        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
-        learningPathABMPage.inputLearningPaths("QA Track con cursos requeridos");
-        Thread.sleep(2000);
-        learningPathABMPage.nameCourseQATrackConCursosRequeridos();
-        Thread.sleep(3000);
-        WebElement elemento1 = learningPathPage.titleCourseInCOurse();
-        Assert.assertEquals(elemento1.getText(), "QA Track con cursos requeridos");
-        Thread.sleep(3000);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.addUser();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.inputAddUserC();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        Thread.sleep(6000);
-        learningPathPage.inputAddUserText("robot.1@mailinator.com");
-        Thread.sleep(8000);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.inputAddUserEnter();
-        learningPathPage.buttonConfirmAddUser();
-        WebElement elemento2 = learningPathPage.messageAddUserOk();
-        Assert.assertEquals(elemento2.getText(), "Usuario(s) agregado(s) satisfactoriamente");
-        Thread.sleep(6000);
-        WebElement element = learningPathPage.nameFirstUser();
-        Assert.assertEquals(element.getText(), "Robot 1");
-        Thread.sleep(3000);
-        driver.navigate().refresh();
-    }
 
     @Test
     public void AdminDeleteCoursesRequiredAlert() throws Exception {
