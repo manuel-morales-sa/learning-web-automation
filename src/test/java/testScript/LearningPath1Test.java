@@ -57,13 +57,13 @@ public class LearningPath1Test extends BaseClass {
         WebElement elemento = createTrackPage.resumeListUsers();
         Assert.assertEquals(elemento.getText(), "1 usuarios");
         createTrackPage.buttonConfirmTrack();
-        Thread.sleep(10000);
+        Thread.sleep(4000);
         WebElement elemento0 = createTrackPage.messageGenial();
         Assert.assertEquals(elemento0.getText(), "¡Genial! Estás a punto de dar un gran paso");
         WebElement elemento1 = createTrackPage.messageGenialConfirmar();
         Assert.assertEquals(elemento1.getText(), "Si estás seguro de los datos ingresados y los cursos seleccionados, dale en confirmar.");
         createTrackPage.buttonConfirmTrackFinal();
-        Thread.sleep(12000);
+        Thread.sleep(4000);
         driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/content/paths/");
         Thread.sleep(6000);
         learningPathABMPage.inputLearningPathsC();
