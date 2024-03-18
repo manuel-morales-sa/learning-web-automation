@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 
 public class LearningPath1Test extends BaseClass {
     @Test
-    public void AdminAddUsersInPathActual() throws Exception {
+    public void AdminTrackAddAndDeleteMixCourses() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);
         PanelPage panelPage = new PanelPage(driver);
         LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
@@ -36,30 +36,45 @@ public class LearningPath1Test extends BaseClass {
         learningPathABMPage.inputLearningPathsC();
         WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
         Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
-        learningPathABMPage.inputLearningPaths("QA Track Con Rewards");
-        Thread.sleep(2000);
+        learningPathABMPage.inputLearningPaths("QA Agrega y Quita Curso");
+        Thread.sleep(6000);
         learningPathABMPage.nameCourseQATrackConCursosRequeridos();
         Thread.sleep(3000);
-        WebElement elemento1 = learningPathPage.titleCourseInCOurse();
-        Assert.assertEquals(elemento1.getText(), "QA Track Con Rewards");
+        learningPathPage.addCourseIfNotExists();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        learningPathPage.inputAddCoursesC();
+        learningPathPage.inputAddCourses("introduccion a la gastronomia");
         Thread.sleep(3000);
+        learningPathPage.addCourseButton();
+        learningPathPage.saveChangesAddCourses();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        learningPathPage.deleteCourseCrehana();
+        learningPathPage.buttonDeleteCourse();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        learningPathPage.buttonDeleteConfirm();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.addUser();
+        WebElement elemento1 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento1.getText(), "Curso(s) agregado(s) satisfactoriamente");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.inputAddUserC();
+        driver.navigate().refresh();
+        learningPathPage.addCourseButton();
+        learningPathPage.inputAddCoursesC();
+        learningPathPage.inputAddCourses("qa curso propio");
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        Thread.sleep(6000);
-        learningPathPage.inputAddUserText("robot.1@mailinator.com");
-        Thread.sleep(8000);
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        learningPathPage.inputAddUserClickUser();
-        learningPathPage.buttonConfirmAddUsersValidated();
-        WebElement elemento2 = learningPathPage.messageAddUserOk();
-        Assert.assertEquals(elemento2.getText(), "Usuario(s) agregado(s) satisfactoriamente");
-        Thread.sleep(6000);
-        WebElement element = learningPathPage.nameFirstUser();
-        Assert.assertEquals(element.getText(), "Robot 1");
+        learningPathPage.addCourseElevate();
+        learningPathPage.saveChangesAddCourses();
         Thread.sleep(3000);
+        WebElement elemento2 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento2.getText(), "Curso(s) agregado(s) satisfactoriamente");
+        WebElement elemento = learningPathABMPage.validoPosicionCursoQA();
+        Assert.assertEquals(elemento.getText(), "QA Curso Propio Automation");
+        Thread.sleep(3000);
+        learningPathPage.deleteCourseCrehana();
+        learningPathPage.buttonDeleteCourse();
+        learningPathPage.buttonDeleteConfirm();
+        Thread.sleep(3000);
+        WebElement elemento3 = learningPathPage.validationCoursesTotal();
+        Assert.assertEquals(elemento3.getText(), "0\n" + "Total de cursos");
         driver.navigate().refresh();
     }
 }
