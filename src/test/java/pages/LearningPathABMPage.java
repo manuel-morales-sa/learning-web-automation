@@ -30,7 +30,7 @@ public class LearningPathABMPage extends BasePage {
     @FindBy(xpath = "//h4[contains(text(),'Crear un track')]")
     private WebElement buttonCreateTrack;
 
-    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[2]/div[5]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/div[3]/p[1]")
+    @FindBy(xpath = "//p[contains(text(),'QA Curso Propio Automation')]")
     private WebElement validoPosicionCursoQA;
 
     @FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/tr[1]/td[5]/div[1]/div[1]")
@@ -156,20 +156,13 @@ public class LearningPathABMPage extends BasePage {
         messageDeletePathDraft.getText();
         return messageDeletePathDraft;
     }
-    public WebElement nameCoursePopupConfirm() {
-        nameCoursePopupConfirm.getText();
-        return nameCoursePopupConfirm;
-    }
+
     public WebElement textPopUpAlert() {
         textPopUpAlert.getText();
         return textPopUpAlert;
     }
     public void buttonConfirmDeletePath() {
         buttonConfirmDeletePath.click();
-    }
-    public WebElement toastConfirmDeletePath() {
-        toastConfirmDeletePath.getText();
-        return toastConfirmDeletePath;
     }
 
     public WebElement nameCourseGet() {

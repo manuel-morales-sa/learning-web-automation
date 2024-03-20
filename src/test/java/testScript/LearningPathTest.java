@@ -97,7 +97,9 @@ public class LearningPathTest extends BaseClass {
         createTrackPage.selectFirtsCourseInTrack();
         createTrackPage.select2CourseInTrack();
         createTrackPage.select3CourseInTrack();
-        Thread.sleep(5000);
+        Thread.sleep(2000);
+        createTrackPage.popUpInTrack();
+        createTrackPage.buttonEntendido();
         createTrackPage.buttonSavePreview();
         Thread.sleep(8000);
         Assert.assertEquals("El borrador \"QA Track Borrador\" se guardó correctamente", "El borrador \"QA Track Borrador\" se guardó correctamente");
@@ -449,7 +451,116 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(3000);
         driver.navigate().refresh();
     }
+    @Test
+    public void IAdminTrackAddAndDeleteMixCourses() throws Exception {
+        LoginFunctions loginFunctions = new LoginFunctions(driver);
+        PanelPage panelPage = new PanelPage(driver);
+        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
+        LearningPathPage learningPathPage = new LearningPathPage(driver);
 
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
+        Thread.sleep(2000);
+
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
+        panelPage.buttonContent();
+        panelPage.buttonLearningPaths();
+        Thread.sleep(6000);
+        learningPathABMPage.inputLearningPathsC();
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
+        learningPathABMPage.inputLearningPaths("QA Agrega y Quita Curso");
+        Thread.sleep(6000);
+        learningPathABMPage.nameCourseQATrackConCursosRequeridos();
+        Thread.sleep(3000);
+        learningPathPage.addCourseIfNotExists();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        learningPathPage.inputAddCoursesC();
+        learningPathPage.inputAddCourses("introduccion a la gastronomia");
+        Thread.sleep(3000);
+        learningPathPage.addCourseButton();
+        learningPathPage.saveChangesAddCourses();
+        Thread.sleep(5000);
+        WebElement elemento1 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento1.getText(), "Curso(s) agregado(s) satisfactoriamente");
+        learningPathPage.deleteCourseCrehana();
+        learningPathPage.buttonDeleteCourse();
+        Thread.sleep(3000);
+        learningPathPage.buttonDeleteConfirm();
+        Thread.sleep(3000);
+        WebElement elemento2 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento2.getText(), "Curso de Introducción a la gastronomía borrado satisfactoriamente");
+        Thread.sleep(3000);
+        driver.navigate().refresh();
+        Thread.sleep(4000);
+        learningPathPage.addCourseIfNotExists();
+        learningPathPage.inputAddCoursesC();
+        learningPathPage.inputAddCourses("qa curso propio");
+        Thread.sleep(4000);
+        learningPathPage.addCourseButton();
+        learningPathPage.saveChangesAddCourses();
+        Thread.sleep(3000);
+        WebElement elemento3 = learningPathPage.popupAddCourseOK();
+        Assert.assertEquals(elemento3.getText(), "Curso(s) agregado(s) satisfactoriamente");
+        WebElement elemento = learningPathABMPage.validoPosicionCursoQA();
+        Assert.assertEquals(elemento.getText(), "QA Curso Propio Automation");
+        Thread.sleep(3000);
+        learningPathPage.deleteCourseCrehana();
+        learningPathPage.buttonDeleteCourse();
+        learningPathPage.buttonDeleteConfirm();
+        Thread.sleep(3000);
+        WebElement elemento4 = learningPathPage.validationCoursesTotal();
+        Assert.assertEquals(elemento4.getText(), "0\n" + "Total de cursos");
+        driver.navigate().refresh();
+    }
+    @Test
+    public void JdeleteSaveDraftCourses() throws Exception {
+        LoginFunctions loginFunctions = new LoginFunctions(driver);
+        PanelPage panelPage = new PanelPage(driver);
+        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
+        CreateTrackPage createTrackPage = new CreateTrackPage(driver);
+
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
+        Thread.sleep(2000);
+
+        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
+        Thread.sleep(6000);
+        panelPage.popUpPanelAdminCenter();
+        panelPage.popUpPanelAdminClose();
+        Thread.sleep(2000);
+        panelPage.buttonContent();
+        panelPage.buttonLearningPaths();
+        Thread.sleep(4000);
+        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
+        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
+        learningPathABMPage.sectionPreview();
+        Thread.sleep(2000);
+        learningPathABMPage.inputLearningPathsC();
+        learningPathABMPage.inputLearningPaths("QA Track Borrador");
+        WebElement elemento = learningPathABMPage.nameCourseGet();
+        Assert.assertEquals(elemento.getText(), "QA Track Borrador");
+        Thread.sleep(4000);
+        learningPathABMPage.menuWithOptions();
+        Thread.sleep(2000);
+        learningPathABMPage.optionDeletePathDraft();
+        Thread.sleep(4000);
+        WebElement elemento2 = learningPathABMPage.messageDeletePathDraft();
+        Assert.assertEquals(elemento2.getText(), "¿Deseas eliminar el borrador");
+        WebElement elemento3 = learningPathABMPage.messageDownAlertDelete();
+        Assert.assertEquals(elemento3.getText(), "Una ves eliminado, no podrás recuperar el borrador y tendrás que crear una nueva ruta.");
+        learningPathABMPage.buttonConfirmDeletePath();
+        Thread.sleep(3000);
+        WebElement elemento4 = learningPathABMPage.textPopUpAlert();
+        Assert.assertEquals(elemento4.getText(), "Se ha eliminado el borrador QA Track Borrador éxitosamente");
+
+    }
     @Test
     public void AdminDeleteCoursesRequiredAlert() throws Exception {
         LoginFunctions loginFunctions = new LoginFunctions(driver);
@@ -485,9 +596,6 @@ public class LearningPathTest extends BaseClass {
         Thread.sleep(2000);
         driver.navigate().refresh();
     }
-
-
-
 
     @Test
     public void CreatePathWithCoursesElevate() throws Exception {
@@ -669,42 +777,5 @@ public class LearningPathTest extends BaseClass {
         driver.navigate().refresh();
     }
 
-    @Test
-    public void deleteSaveDraftCourses() throws Exception {
-        LoginFunctions loginFunctions = new LoginFunctions(driver);
-        PanelPage panelPage = new PanelPage(driver);
-        LearningPathABMPage learningPathABMPage = new LearningPathABMPage(driver);
-        CreateTrackPage createTrackPage = new CreateTrackPage(driver);
 
-        driver.manage().window().maximize();
-        loginFunctions.loginActions("manuel.automation@mailinator.com", "1234567890");
-        Thread.sleep(6000);
-        driver.navigate().to("https://www.crehana.com/org/qa-automation/panel/");
-        Thread.sleep(8000);
-        panelPage.buttonContent();
-        panelPage.buttonLearningPaths();
-        Thread.sleep(4000);
-        WebElement elemento0 = learningPathABMPage.tittleLearningPaths();
-        Assert.assertEquals(elemento0.getText(), "Rutas de aprendizajes");
-        learningPathABMPage.sectionPreview();
-        Thread.sleep(2000);
-        learningPathABMPage.inputLearningPathsC();
-        learningPathABMPage.inputLearningPaths("QA Track Borrador");
-        WebElement elemento = learningPathABMPage.nameCourseGet();
-        Assert.assertEquals(elemento.getText(), "QA Track Borrador");
-        Thread.sleep(4000);
-        learningPathABMPage.menuWithOptions();
-        Thread.sleep(2000);
-        learningPathABMPage.optionDeletePathDraft();
-        Thread.sleep(4000);
-        WebElement elemento2 = learningPathABMPage.messageDeletePathDraft();
-        Assert.assertEquals(elemento2.getText(), "¿Deseas eliminar el borrador");
-        WebElement elemento3 = learningPathABMPage.messageDownAlertDelete();
-        Assert.assertEquals(elemento3.getText(), "Una ves eliminado, no podrás recuperar el borrador y tendrás que crear una nueva ruta.");
-        learningPathABMPage.buttonConfirmDeletePath();
-        Thread.sleep(3000);
-        WebElement elemento4 = learningPathABMPage.textPopUpAlert();
-        Assert.assertEquals(elemento4.getText(), "Se ha eliminado el borrador QA Track Borrador éxitosamente");
-
-    }
 }
