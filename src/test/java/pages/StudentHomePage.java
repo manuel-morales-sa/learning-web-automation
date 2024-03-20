@@ -9,8 +9,10 @@ public class StudentHomePage extends BasePage {
     private WebElement contentButtonStudent;
     @FindBy(xpath = "//body/div[@id='__next']/div[1]/div[1]/div[1]/div[1]/div[3]/div[1]/ul[1]/li[2]/button[1]")
     private WebElement learnPathButton;
-    @FindBy(xpath = "//p[contains(text(),'QA Track Con Rewards')]")
+    @FindBy(xpath = "//span[contains(text(),'QA Track Con Rewards')]")
     private WebElement namePathGetStudent;
+    @FindBy(xpath = "//span[contains(text(),'Ruta deshabilitada')]")
+    private WebElement pathDeactivate;
 
     //-----------------------Constructor-----------------------//
     public StudentHomePage(WebDriver driver) {
@@ -28,12 +30,8 @@ public class StudentHomePage extends BasePage {
         namePathGetStudent.getText();
         return namePathGetStudent;
     }
-    public boolean isElementPresent() {
-        try {
-            WebElement elemento = namePathGetStudent();
-            return elemento != null && elemento.isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
+    public WebElement pathDeactivate() {
+        pathDeactivate.getText();
+        return pathDeactivate;
     }
 }
